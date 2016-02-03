@@ -57,8 +57,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnPlay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPlay.Click
-        player.OpenFile("C:\Users\danma\Downloads\Blood Moon Waltz.mp3", TStreamFormat.sfMp3)
-        player.StartPlayback()
+        player.ResumePlayback()
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click
@@ -71,8 +70,6 @@ Public Class Form1
         Timer2.Start()
     End Sub
 
-    Dim leftvux As Integer = 0         'for the VU testing
-    Dim rightvux As Integer = 0
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         func.VU(player, pbarLeft, pbarRight)
@@ -249,6 +246,16 @@ Public Class Form1
             Else
                 lblTitle.Text = info.Title
             End If
+        End If
+    End Sub
+
+    
+    Private Sub btnPause_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPause.Click
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If Convert.ToString(status.fPause) = False Then
+            player.PausePlayback()
         End If
     End Sub
 End Class

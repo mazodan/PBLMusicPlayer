@@ -8,6 +8,9 @@ Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
     Dim filename As String
+    Dim leftVolume As Integer
+    Dim rightVolume As Integer
+
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'echo
@@ -34,7 +37,9 @@ Public Class Form1
         Dim EqPoints() As Integer = {32, 64, 125, 250, 500, 1000, 2000, 4000, 8000, 16000}
         player.SetEqualizerPoints(EqPoints, 10)
 
-
+        'get Internal Volume
+        player.GetPlayerVolume(leftVolume, rightVolume)
+        tbVol.Value = leftVolume
     End Sub
 
     Private Sub btnPlay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPlay.Click
@@ -89,6 +94,8 @@ Public Class Form1
         If pbarSeek.Maximum > CInt(Fix(pos.sec)) Then
             pbarSeek.Value = CInt(Fix(pos.sec))
         End If
+
+        Label5.Text = player.GetBitrate(True).ToString() + " kbps"
     End Sub
 
 
@@ -203,5 +210,9 @@ Public Class Form1
         VScrollBar8.Value = 20
         VScrollBar7.Value = 20
         VScrollBar6.Value = 20
+    End Sub
+
+    Private Sub tbVol_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbVol.Scroll
+        player.SetPlayerVolume(tbVol.Value, tbVol.Value)
     End Sub
 End Class

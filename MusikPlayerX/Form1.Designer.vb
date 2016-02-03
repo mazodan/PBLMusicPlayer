@@ -52,7 +52,11 @@ Partial Class Form1
         Me.chkEQ = New System.Windows.Forms.CheckBox
         Me.btnEQAC = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.tbVol = New System.Windows.Forms.TrackBar
+        Me.Label6 = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnPlay
@@ -307,11 +311,41 @@ Partial Class Form1
         Me.Button1.Text = "Bass Booster"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(27, 252)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "BitRate"
+        '
+        'tbVol
+        '
+        Me.tbVol.Location = New System.Drawing.Point(438, 165)
+        Me.tbVol.Maximum = 100
+        Me.tbVol.Name = "tbVol"
+        Me.tbVol.Size = New System.Drawing.Size(278, 45)
+        Me.tbVol.TabIndex = 25
+        Me.tbVol.TickFrequency = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(448, 132)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.TabIndex = 26
+        Me.Label6.Text = "Volume"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(740, 494)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.tbVol)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnEQAC)
         Me.Controls.Add(Me.chkEQ)
@@ -339,8 +373,9 @@ Partial Class Form1
         Me.Controls.Add(Me.btnLoad)
         Me.Controls.Add(Me.btnPlay)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "PBL mp3 player DEBUG ONLY"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbVol, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -374,5 +409,8 @@ Partial Class Form1
     Friend WithEvents chkEQ As System.Windows.Forms.CheckBox
     Friend WithEvents btnEQAC As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents tbVol As System.Windows.Forms.TrackBar
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class

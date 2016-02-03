@@ -8,7 +8,6 @@ Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
     Dim func As New Functionality()
-    Dim filename As String
     Dim Fnameonly As String
     Dim leftVolume As Integer
     Dim rightVolume As Integer
@@ -63,7 +62,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click
-        func.load(player, OFDprime)
+        If OFDprime.ShowDialog = Windows.Forms.DialogResult.OK Then
+            func.load(player, OFDprime.FileName)
+            Fnameonly = OFDprime.SafeFileName
+        End If
         ShowInfo()
         Timer1.Start()
         Timer2.Start()
@@ -73,11 +75,8 @@ Public Class Form1
     Dim rightvux As Integer = 0
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        player.GetVUData(leftvux, rightvux)
-        pbarLeft.Value = leftvux
-        pbarRight.Value = rightvux
+        func.VU(player, pbarLeft, pbarRight)
         PictureBox1.Refresh()
-
     End Sub
 
     Private Sub btnBPM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBPM.Click
@@ -251,6 +250,5 @@ Public Class Form1
                 lblTitle.Text = info.Title
             End If
         End If
-
     End Sub
 End Class

@@ -72,7 +72,7 @@ Partial Class Form1
         '
         'btnPlay
         '
-        Me.btnPlay.Location = New System.Drawing.Point(20, 113)
+        Me.btnPlay.Location = New System.Drawing.Point(420, 118)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(208, 23)
         Me.btnPlay.TabIndex = 0
@@ -85,9 +85,9 @@ Partial Class Form1
         '
         'btnLoad
         '
-        Me.btnLoad.Location = New System.Drawing.Point(12, 12)
+        Me.btnLoad.Location = New System.Drawing.Point(475, 213)
         Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoad.Size = New System.Drawing.Size(75, 32)
         Me.btnLoad.TabIndex = 1
         Me.btnLoad.Text = "Load MP3"
         Me.btnLoad.UseVisualStyleBackColor = True
@@ -95,7 +95,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(110, 12)
+        Me.Label1.Location = New System.Drawing.Point(510, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 2
@@ -103,14 +103,14 @@ Partial Class Form1
         '
         'pbarLeft
         '
-        Me.pbarLeft.Location = New System.Drawing.Point(113, 38)
+        Me.pbarLeft.Location = New System.Drawing.Point(513, 43)
         Me.pbarLeft.Name = "pbarLeft"
         Me.pbarLeft.Size = New System.Drawing.Size(180, 23)
         Me.pbarLeft.TabIndex = 3
         '
         'pbarRight
         '
-        Me.pbarRight.Location = New System.Drawing.Point(113, 67)
+        Me.pbarRight.Location = New System.Drawing.Point(513, 72)
         Me.pbarRight.Name = "pbarRight"
         Me.pbarRight.Size = New System.Drawing.Size(180, 23)
         Me.pbarRight.TabIndex = 4
@@ -118,7 +118,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(94, 48)
+        Me.Label2.Location = New System.Drawing.Point(494, 53)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(13, 13)
         Me.Label2.TabIndex = 5
@@ -127,7 +127,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(94, 77)
+        Me.Label3.Location = New System.Drawing.Point(494, 82)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(15, 13)
         Me.Label3.TabIndex = 6
@@ -139,7 +139,7 @@ Partial Class Form1
         '
         'btnBPM
         '
-        Me.btnBPM.Location = New System.Drawing.Point(12, 67)
+        Me.btnBPM.Location = New System.Drawing.Point(412, 72)
         Me.btnBPM.Name = "btnBPM"
         Me.btnBPM.Size = New System.Drawing.Size(75, 23)
         Me.btnBPM.TabIndex = 7
@@ -149,7 +149,7 @@ Partial Class Form1
         'lblBPM
         '
         Me.lblBPM.AutoSize = True
-        Me.lblBPM.Location = New System.Drawing.Point(27, 97)
+        Me.lblBPM.Location = New System.Drawing.Point(427, 102)
         Me.lblBPM.Name = "lblBPM"
         Me.lblBPM.Size = New System.Drawing.Size(34, 13)
         Me.lblBPM.TabIndex = 8
@@ -158,7 +158,7 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 326)
+        Me.PictureBox1.Location = New System.Drawing.Point(270, 333)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(365, 156)
         Me.PictureBox1.TabIndex = 9
@@ -167,7 +167,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 149)
+        Me.Label4.Location = New System.Drawing.Point(417, 154)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 13)
         Me.Label4.TabIndex = 10
@@ -175,7 +175,7 @@ Partial Class Form1
         '
         'pbarSeek
         '
-        Me.pbarSeek.Location = New System.Drawing.Point(20, 175)
+        Me.pbarSeek.Location = New System.Drawing.Point(12, 53)
         Me.pbarSeek.Name = "pbarSeek"
         Me.pbarSeek.Size = New System.Drawing.Size(357, 23)
         Me.pbarSeek.TabIndex = 11
@@ -187,7 +187,7 @@ Partial Class Form1
         'chkEcho
         '
         Me.chkEcho.AutoSize = True
-        Me.chkEcho.Location = New System.Drawing.Point(191, 11)
+        Me.chkEcho.Location = New System.Drawing.Point(591, 16)
         Me.chkEcho.Name = "chkEcho"
         Me.chkEcho.Size = New System.Drawing.Size(51, 17)
         Me.chkEcho.TabIndex = 12
@@ -197,7 +197,7 @@ Partial Class Form1
         'VScrollBar1
         '
         Me.VScrollBar1.LargeChange = 1
-        Me.VScrollBar1.Location = New System.Drawing.Point(420, 326)
+        Me.VScrollBar1.Location = New System.Drawing.Point(688, 335)
         Me.VScrollBar1.Maximum = 40
         Me.VScrollBar1.Name = "VScrollBar1"
         Me.VScrollBar1.Size = New System.Drawing.Size(17, 156)
@@ -207,7 +207,7 @@ Partial Class Form1
         'VScrollBar2
         '
         Me.VScrollBar2.LargeChange = 1
-        Me.VScrollBar2.Location = New System.Drawing.Point(448, 326)
+        Me.VScrollBar2.Location = New System.Drawing.Point(716, 335)
         Me.VScrollBar2.Maximum = 40
         Me.VScrollBar2.Name = "VScrollBar2"
         Me.VScrollBar2.Size = New System.Drawing.Size(17, 156)
@@ -217,7 +217,7 @@ Partial Class Form1
         'VScrollBar3
         '
         Me.VScrollBar3.LargeChange = 1
-        Me.VScrollBar3.Location = New System.Drawing.Point(472, 326)
+        Me.VScrollBar3.Location = New System.Drawing.Point(740, 335)
         Me.VScrollBar3.Maximum = 40
         Me.VScrollBar3.Name = "VScrollBar3"
         Me.VScrollBar3.Size = New System.Drawing.Size(17, 156)
@@ -227,7 +227,7 @@ Partial Class Form1
         'VScrollBar4
         '
         Me.VScrollBar4.LargeChange = 1
-        Me.VScrollBar4.Location = New System.Drawing.Point(499, 326)
+        Me.VScrollBar4.Location = New System.Drawing.Point(767, 335)
         Me.VScrollBar4.Maximum = 40
         Me.VScrollBar4.Name = "VScrollBar4"
         Me.VScrollBar4.Size = New System.Drawing.Size(17, 156)
@@ -237,7 +237,7 @@ Partial Class Form1
         'VScrollBar5
         '
         Me.VScrollBar5.LargeChange = 1
-        Me.VScrollBar5.Location = New System.Drawing.Point(526, 326)
+        Me.VScrollBar5.Location = New System.Drawing.Point(794, 335)
         Me.VScrollBar5.Maximum = 40
         Me.VScrollBar5.Name = "VScrollBar5"
         Me.VScrollBar5.Size = New System.Drawing.Size(17, 156)
@@ -247,7 +247,7 @@ Partial Class Form1
         'VScrollBar6
         '
         Me.VScrollBar6.LargeChange = 1
-        Me.VScrollBar6.Location = New System.Drawing.Point(658, 326)
+        Me.VScrollBar6.Location = New System.Drawing.Point(926, 335)
         Me.VScrollBar6.Maximum = 40
         Me.VScrollBar6.Name = "VScrollBar6"
         Me.VScrollBar6.Size = New System.Drawing.Size(17, 156)
@@ -257,7 +257,7 @@ Partial Class Form1
         'VScrollBar7
         '
         Me.VScrollBar7.LargeChange = 1
-        Me.VScrollBar7.Location = New System.Drawing.Point(631, 326)
+        Me.VScrollBar7.Location = New System.Drawing.Point(899, 335)
         Me.VScrollBar7.Maximum = 40
         Me.VScrollBar7.Name = "VScrollBar7"
         Me.VScrollBar7.Size = New System.Drawing.Size(17, 156)
@@ -267,7 +267,7 @@ Partial Class Form1
         'VScrollBar8
         '
         Me.VScrollBar8.LargeChange = 1
-        Me.VScrollBar8.Location = New System.Drawing.Point(604, 326)
+        Me.VScrollBar8.Location = New System.Drawing.Point(872, 335)
         Me.VScrollBar8.Maximum = 40
         Me.VScrollBar8.Name = "VScrollBar8"
         Me.VScrollBar8.Size = New System.Drawing.Size(17, 156)
@@ -277,7 +277,7 @@ Partial Class Form1
         'VScrollBar9
         '
         Me.VScrollBar9.LargeChange = 1
-        Me.VScrollBar9.Location = New System.Drawing.Point(580, 326)
+        Me.VScrollBar9.Location = New System.Drawing.Point(848, 335)
         Me.VScrollBar9.Maximum = 40
         Me.VScrollBar9.Name = "VScrollBar9"
         Me.VScrollBar9.Size = New System.Drawing.Size(17, 156)
@@ -287,7 +287,7 @@ Partial Class Form1
         'VScrollBar10
         '
         Me.VScrollBar10.LargeChange = 1
-        Me.VScrollBar10.Location = New System.Drawing.Point(552, 326)
+        Me.VScrollBar10.Location = New System.Drawing.Point(820, 335)
         Me.VScrollBar10.Maximum = 40
         Me.VScrollBar10.Name = "VScrollBar10"
         Me.VScrollBar10.Size = New System.Drawing.Size(17, 156)
@@ -297,7 +297,7 @@ Partial Class Form1
         'chkEQ
         '
         Me.chkEQ.AutoSize = True
-        Me.chkEQ.Location = New System.Drawing.Point(420, 294)
+        Me.chkEQ.Location = New System.Drawing.Point(688, 303)
         Me.chkEQ.Name = "chkEQ"
         Me.chkEQ.Size = New System.Drawing.Size(51, 17)
         Me.chkEQ.TabIndex = 21
@@ -306,7 +306,7 @@ Partial Class Form1
         '
         'btnEQAC
         '
-        Me.btnEQAC.Location = New System.Drawing.Point(20, 290)
+        Me.btnEQAC.Location = New System.Drawing.Point(278, 297)
         Me.btnEQAC.Name = "btnEQAC"
         Me.btnEQAC.Size = New System.Drawing.Size(75, 23)
         Me.btnEQAC.TabIndex = 22
@@ -315,7 +315,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(102, 289)
+        Me.Button1.Location = New System.Drawing.Point(360, 296)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 23)
         Me.Button1.TabIndex = 23
@@ -325,7 +325,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(233, 149)
+        Me.Label5.Location = New System.Drawing.Point(633, 154)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 24
@@ -333,7 +333,7 @@ Partial Class Form1
         '
         'tbVol
         '
-        Me.tbVol.Location = New System.Drawing.Point(326, 32)
+        Me.tbVol.Location = New System.Drawing.Point(718, 40)
         Me.tbVol.Maximum = 100
         Me.tbVol.Name = "tbVol"
         Me.tbVol.Size = New System.Drawing.Size(278, 45)
@@ -343,7 +343,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(335, 9)
+        Me.Label6.Location = New System.Drawing.Point(727, 17)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 13)
         Me.Label6.TabIndex = 26
@@ -352,16 +352,17 @@ Partial Class Form1
         'lblPOS
         '
         Me.lblPOS.AutoSize = True
-        Me.lblPOS.Location = New System.Drawing.Point(93, 149)
+        Me.lblPOS.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPOS.ForeColor = System.Drawing.Color.Teal
+        Me.lblPOS.Location = New System.Drawing.Point(13, 85)
         Me.lblPOS.Name = "lblPOS"
-        Me.lblPOS.Size = New System.Drawing.Size(43, 13)
+        Me.lblPOS.Size = New System.Drawing.Size(0, 30)
         Me.lblPOS.TabIndex = 27
-        Me.lblPOS.Text = "LBLpos"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(323, 80)
+        Me.Label7.Location = New System.Drawing.Point(723, 85)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 28
@@ -369,7 +370,7 @@ Partial Class Form1
         '
         'tbarRate
         '
-        Me.tbarRate.Location = New System.Drawing.Point(326, 103)
+        Me.tbarRate.Location = New System.Drawing.Point(718, 111)
         Me.tbarRate.Maximum = 150
         Me.tbarRate.Minimum = 50
         Me.tbarRate.Name = "tbarRate"
@@ -381,7 +382,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(17, 201)
+        Me.Label8.Location = New System.Drawing.Point(77, 375)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(30, 13)
         Me.Label8.TabIndex = 30
@@ -389,7 +390,7 @@ Partial Class Form1
         '
         'tbPitch
         '
-        Me.tbPitch.Location = New System.Drawing.Point(20, 228)
+        Me.tbPitch.Location = New System.Drawing.Point(80, 402)
         Me.tbPitch.Maximum = 150
         Me.tbPitch.Minimum = 50
         Me.tbPitch.Name = "tbPitch"
@@ -401,7 +402,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(417, 165)
+        Me.Label9.Location = New System.Drawing.Point(809, 173)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 32
@@ -409,7 +410,7 @@ Partial Class Form1
         '
         'tbarTempo
         '
-        Me.tbarTempo.Location = New System.Drawing.Point(420, 192)
+        Me.tbarTempo.Location = New System.Drawing.Point(812, 200)
         Me.tbarTempo.Maximum = 150
         Me.tbarTempo.Minimum = 50
         Me.tbarTempo.Name = "tbarTempo"
@@ -421,17 +422,18 @@ Partial Class Form1
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Location = New System.Drawing.Point(351, 251)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.LimeGreen
+        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(129, 13)
+        Me.lblTitle.Size = New System.Drawing.Size(0, 25)
         Me.lblTitle.TabIndex = 34
-        Me.lblTitle.Text = "TitleOfSongGoesHere???"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(740, 494)
+        Me.ClientSize = New System.Drawing.Size(1208, 494)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.tbarTempo)
         Me.Controls.Add(Me.Label9)

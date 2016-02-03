@@ -7,6 +7,7 @@
 Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
+    Dim func As New Functionality()
     Dim filename As String
     Dim Fnameonly As String
     Dim leftVolume As Integer
@@ -62,15 +63,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click
-        If OFDprime.ShowDialog = Windows.Forms.DialogResult.OK Then
-            filename = OFDprime.FileName
-            Fnameonly = OFDprime.SafeFileName
-            player.OpenFile(filename, TStreamFormat.sfMp3)
-            player.StartPlayback()
-            ShowInfo()
-            Timer1.Start()
-            Timer2.Start()
-        End If
+        func.load(player, OFDprime)
+        ShowInfo()
+        Timer1.Start()
+        Timer2.Start()
     End Sub
 
     Dim leftvux As Integer = 0         'for the VU testing

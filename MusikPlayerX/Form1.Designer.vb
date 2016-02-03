@@ -32,7 +32,6 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.btnBPM = New System.Windows.Forms.Button
         Me.lblBPM = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
         Me.pbarSeek = New System.Windows.Forms.ProgressBar
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.chkEcho = New System.Windows.Forms.CheckBox
@@ -67,6 +66,8 @@ Partial Class Form1
         Me.btnPlay = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btnLoad = New System.Windows.Forms.Button
+        Me.lblVol = New System.Windows.Forms.Label
+        Me.lblRate = New System.Windows.Forms.Label
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,15 +145,6 @@ Partial Class Form1
         Me.lblBPM.Size = New System.Drawing.Size(48, 16)
         Me.lblBPM.TabIndex = 8
         Me.lblBPM.Text = "BPM?"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(458, 231)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 13)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Seek Testing"
         '
         'pbarSeek
         '
@@ -288,7 +280,7 @@ Partial Class Form1
         '
         'btnEQAC
         '
-        Me.btnEQAC.Location = New System.Drawing.Point(278, 297)
+        Me.btnEQAC.Location = New System.Drawing.Point(576, 434)
         Me.btnEQAC.Name = "btnEQAC"
         Me.btnEQAC.Size = New System.Drawing.Size(75, 23)
         Me.btnEQAC.TabIndex = 22
@@ -297,7 +289,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(360, 296)
+        Me.Button1.Location = New System.Drawing.Point(576, 463)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 23)
         Me.Button1.TabIndex = 23
@@ -317,7 +309,7 @@ Partial Class Form1
         '
         'tbVol
         '
-        Me.tbVol.Location = New System.Drawing.Point(718, 40)
+        Me.tbVol.Location = New System.Drawing.Point(12, 202)
         Me.tbVol.Maximum = 100
         Me.tbVol.Name = "tbVol"
         Me.tbVol.Size = New System.Drawing.Size(278, 45)
@@ -327,7 +319,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(727, 17)
+        Me.Label6.Location = New System.Drawing.Point(9, 173)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 13)
         Me.Label6.TabIndex = 26
@@ -346,15 +338,15 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(723, 85)
+        Me.Label7.Location = New System.Drawing.Point(17, 249)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 13)
+        Me.Label7.Size = New System.Drawing.Size(68, 13)
         Me.Label7.TabIndex = 28
-        Me.Label7.Text = "Rate"
+        Me.Label7.Text = "Audio Speed"
         '
         'tbarRate
         '
-        Me.tbarRate.Location = New System.Drawing.Point(718, 111)
+        Me.tbarRate.Location = New System.Drawing.Point(12, 275)
         Me.tbarRate.Maximum = 150
         Me.tbarRate.Minimum = 50
         Me.tbarRate.Name = "tbarRate"
@@ -366,7 +358,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(77, 375)
+        Me.Label8.Location = New System.Drawing.Point(408, 232)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(30, 13)
         Me.Label8.TabIndex = 30
@@ -374,7 +366,7 @@ Partial Class Form1
         '
         'tbPitch
         '
-        Me.tbPitch.Location = New System.Drawing.Point(80, 402)
+        Me.tbPitch.Location = New System.Drawing.Point(411, 259)
         Me.tbPitch.Maximum = 150
         Me.tbPitch.Minimum = 50
         Me.tbPitch.Name = "tbPitch"
@@ -462,9 +454,9 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(270, 333)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 326)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(365, 156)
+        Me.PictureBox1.Size = New System.Drawing.Size(557, 156)
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
@@ -478,11 +470,35 @@ Partial Class Form1
         Me.btnLoad.TabIndex = 1
         Me.btnLoad.UseVisualStyleBackColor = True
         '
+        'lblVol
+        '
+        Me.lblVol.AutoSize = True
+        Me.lblVol.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblVol.Location = New System.Drawing.Point(296, 202)
+        Me.lblVol.Name = "lblVol"
+        Me.lblVol.Size = New System.Drawing.Size(36, 19)
+        Me.lblVol.TabIndex = 38
+        Me.lblVol.Text = "100"
+        '
+        'lblRate
+        '
+        Me.lblRate.AutoSize = True
+        Me.lblRate.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRate.ForeColor = System.Drawing.Color.Olive
+        Me.lblRate.Location = New System.Drawing.Point(296, 275)
+        Me.lblRate.Name = "lblRate"
+        Me.lblRate.Size = New System.Drawing.Size(36, 19)
+        Me.lblRate.TabIndex = 39
+        Me.lblRate.Text = "100"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.lblRate)
+        Me.Controls.Add(Me.lblVol)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnLoop)
         Me.Controls.Add(Me.btnPause)
@@ -513,7 +529,6 @@ Partial Class Form1
         Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.chkEcho)
         Me.Controls.Add(Me.pbarSeek)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblBPM)
         Me.Controls.Add(Me.btnBPM)
@@ -545,7 +560,6 @@ Partial Class Form1
     Friend WithEvents btnBPM As System.Windows.Forms.Button
     Friend WithEvents lblBPM As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents pbarSeek As System.Windows.Forms.ProgressBar
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
     Friend WithEvents chkEcho As System.Windows.Forms.CheckBox
@@ -578,5 +592,7 @@ Partial Class Form1
     Friend WithEvents btnLoop As System.Windows.Forms.Button
     Friend WithEvents Timer3 As System.Windows.Forms.Timer
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents lblVol As System.Windows.Forms.Label
+    Friend WithEvents lblRate As System.Windows.Forms.Label
 
 End Class

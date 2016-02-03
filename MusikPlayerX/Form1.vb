@@ -223,10 +223,12 @@ Public Class Form1
 
     Private Sub tbVol_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbVol.Scroll
         player.SetPlayerVolume(tbVol.Value, tbVol.Value)
+        lblVol.Text = tbVol.Value
     End Sub
 
     Private Sub tbarRate_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarRate.Scroll
         player.SetRate(tbarRate.Value)
+        lblRate.Text = tbarRate.Value
     End Sub
 
     Private Sub tbPitch_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbPitch.Scroll

@@ -62,6 +62,7 @@ Partial Class Form1
         Me.tbPitch = New System.Windows.Forms.TrackBar
         Me.Label9 = New System.Windows.Forms.Label
         Me.tbarTempo = New System.Windows.Forms.TrackBar
+        Me.lblTitle = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -417,11 +418,21 @@ Partial Class Form1
         Me.tbarTempo.TickFrequency = 5
         Me.tbarTempo.Value = 100
         '
+        'lblTitle
+        '
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Location = New System.Drawing.Point(351, 251)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(129, 13)
+        Me.lblTitle.TabIndex = 34
+        Me.lblTitle.Text = "TitleOfSongGoesHere???"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(740, 494)
+        Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.tbarTempo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.tbPitch)
@@ -508,5 +519,6 @@ Partial Class Form1
     Friend WithEvents tbPitch As System.Windows.Forms.TrackBar
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents tbarTempo As System.Windows.Forms.TrackBar
+    Friend WithEvents lblTitle As System.Windows.Forms.Label
 
 End Class

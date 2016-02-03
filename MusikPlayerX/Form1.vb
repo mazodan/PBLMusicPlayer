@@ -8,6 +8,7 @@ Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
     Dim filename As String
+    Dim Fnameonly As String
     Dim leftVolume As Integer
     Dim rightVolume As Integer
     Dim rate As Integer
@@ -63,9 +64,10 @@ Public Class Form1
     Private Sub btnLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click
         If OFDprime.ShowDialog = Windows.Forms.DialogResult.OK Then
             filename = OFDprime.FileName
+            Fnameonly = OFDprime.SafeFileName
             player.OpenFile(filename, TStreamFormat.sfMp3)
             player.StartPlayback()
-
+            ShowInfo()
             Timer1.Start()
             Timer2.Start()
         End If
@@ -240,5 +242,19 @@ Public Class Form1
 
     Private Sub tbarTempo_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarTempo.Scroll
         player.SetTempo(tbarTempo.Value)
+    End Sub
+
+    Public Sub ShowInfo()
+        Dim info As New TID3InfoEx()
+        lblTitle.Text = ""
+
+        If player.LoadID3Ex(info, True) Then
+            If info.Title = "" Then
+                lblTitle.Text = Fnameonly
+            Else
+                lblTitle.Text = info.Title
+            End If
+        End If
+
     End Sub
 End Class

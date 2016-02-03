@@ -58,14 +58,20 @@ Partial Class Form1
         Me.lblPOS = New System.Windows.Forms.Label
         Me.Label7 = New System.Windows.Forms.Label
         Me.tbarRate = New System.Windows.Forms.TrackBar
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.tbPitch = New System.Windows.Forms.TrackBar
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.tbarTempo = New System.Windows.Forms.TrackBar
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnPlay
         '
-        Me.btnPlay.Location = New System.Drawing.Point(169, 112)
+        Me.btnPlay.Location = New System.Drawing.Point(20, 113)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(208, 23)
         Me.btnPlay.TabIndex = 0
@@ -88,7 +94,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(194, 12)
+        Me.Label1.Location = New System.Drawing.Point(110, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 2
@@ -96,14 +102,14 @@ Partial Class Form1
         '
         'pbarLeft
         '
-        Me.pbarLeft.Location = New System.Drawing.Point(197, 38)
+        Me.pbarLeft.Location = New System.Drawing.Point(113, 38)
         Me.pbarLeft.Name = "pbarLeft"
         Me.pbarLeft.Size = New System.Drawing.Size(180, 23)
         Me.pbarLeft.TabIndex = 3
         '
         'pbarRight
         '
-        Me.pbarRight.Location = New System.Drawing.Point(197, 67)
+        Me.pbarRight.Location = New System.Drawing.Point(113, 67)
         Me.pbarRight.Name = "pbarRight"
         Me.pbarRight.Size = New System.Drawing.Size(180, 23)
         Me.pbarRight.TabIndex = 4
@@ -111,7 +117,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(178, 48)
+        Me.Label2.Location = New System.Drawing.Point(94, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(13, 13)
         Me.Label2.TabIndex = 5
@@ -120,7 +126,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(178, 77)
+        Me.Label3.Location = New System.Drawing.Point(94, 77)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(15, 13)
         Me.Label3.TabIndex = 6
@@ -160,7 +166,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 161)
+        Me.Label4.Location = New System.Drawing.Point(17, 149)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 13)
         Me.Label4.TabIndex = 10
@@ -168,7 +174,7 @@ Partial Class Form1
         '
         'pbarSeek
         '
-        Me.pbarSeek.Location = New System.Drawing.Point(20, 187)
+        Me.pbarSeek.Location = New System.Drawing.Point(20, 175)
         Me.pbarSeek.Name = "pbarSeek"
         Me.pbarSeek.Size = New System.Drawing.Size(357, 23)
         Me.pbarSeek.TabIndex = 11
@@ -180,7 +186,7 @@ Partial Class Form1
         'chkEcho
         '
         Me.chkEcho.AutoSize = True
-        Me.chkEcho.Location = New System.Drawing.Point(438, 38)
+        Me.chkEcho.Location = New System.Drawing.Point(191, 11)
         Me.chkEcho.Name = "chkEcho"
         Me.chkEcho.Size = New System.Drawing.Size(51, 17)
         Me.chkEcho.TabIndex = 12
@@ -299,7 +305,7 @@ Partial Class Form1
         '
         'btnEQAC
         '
-        Me.btnEQAC.Location = New System.Drawing.Point(494, 242)
+        Me.btnEQAC.Location = New System.Drawing.Point(20, 290)
         Me.btnEQAC.Name = "btnEQAC"
         Me.btnEQAC.Size = New System.Drawing.Size(75, 23)
         Me.btnEQAC.TabIndex = 22
@@ -308,7 +314,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(576, 241)
+        Me.Button1.Location = New System.Drawing.Point(102, 289)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 23)
         Me.Button1.TabIndex = 23
@@ -318,7 +324,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(233, 161)
+        Me.Label5.Location = New System.Drawing.Point(233, 149)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 24
@@ -326,7 +332,7 @@ Partial Class Form1
         '
         'tbVol
         '
-        Me.tbVol.Location = New System.Drawing.Point(438, 90)
+        Me.tbVol.Location = New System.Drawing.Point(326, 32)
         Me.tbVol.Maximum = 100
         Me.tbVol.Name = "tbVol"
         Me.tbVol.Size = New System.Drawing.Size(278, 45)
@@ -336,7 +342,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(447, 67)
+        Me.Label6.Location = New System.Drawing.Point(335, 9)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 13)
         Me.Label6.TabIndex = 26
@@ -345,7 +351,7 @@ Partial Class Form1
         'lblPOS
         '
         Me.lblPOS.AutoSize = True
-        Me.lblPOS.Location = New System.Drawing.Point(93, 161)
+        Me.lblPOS.Location = New System.Drawing.Point(93, 149)
         Me.lblPOS.Name = "lblPOS"
         Me.lblPOS.Size = New System.Drawing.Size(43, 13)
         Me.lblPOS.TabIndex = 27
@@ -354,7 +360,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(435, 138)
+        Me.Label7.Location = New System.Drawing.Point(323, 80)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 28
@@ -362,7 +368,7 @@ Partial Class Form1
         '
         'tbarRate
         '
-        Me.tbarRate.Location = New System.Drawing.Point(438, 161)
+        Me.tbarRate.Location = New System.Drawing.Point(326, 103)
         Me.tbarRate.Maximum = 150
         Me.tbarRate.Minimum = 50
         Me.tbarRate.Name = "tbarRate"
@@ -371,11 +377,55 @@ Partial Class Form1
         Me.tbarRate.TickFrequency = 5
         Me.tbarRate.Value = 100
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(17, 201)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 30
+        Me.Label8.Text = "pitch"
+        '
+        'tbPitch
+        '
+        Me.tbPitch.Location = New System.Drawing.Point(20, 228)
+        Me.tbPitch.Maximum = 150
+        Me.tbPitch.Minimum = 50
+        Me.tbPitch.Name = "tbPitch"
+        Me.tbPitch.Size = New System.Drawing.Size(278, 45)
+        Me.tbPitch.TabIndex = 31
+        Me.tbPitch.TickFrequency = 5
+        Me.tbPitch.Value = 100
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(417, 165)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 32
+        Me.Label9.Text = "Tempo"
+        '
+        'tbarTempo
+        '
+        Me.tbarTempo.Location = New System.Drawing.Point(420, 192)
+        Me.tbarTempo.Maximum = 150
+        Me.tbarTempo.Minimum = 50
+        Me.tbarTempo.Name = "tbarTempo"
+        Me.tbarTempo.Size = New System.Drawing.Size(278, 45)
+        Me.tbarTempo.TabIndex = 33
+        Me.tbarTempo.TickFrequency = 5
+        Me.tbarTempo.Value = 100
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(740, 494)
+        Me.Controls.Add(Me.tbarTempo)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.tbPitch)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.tbarRate)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblPOS)
@@ -413,6 +463,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -452,5 +504,9 @@ Partial Class Form1
     Friend WithEvents lblPOS As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents tbarRate As System.Windows.Forms.TrackBar
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents tbPitch As System.Windows.Forms.TrackBar
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents tbarTempo As System.Windows.Forms.TrackBar
 
 End Class

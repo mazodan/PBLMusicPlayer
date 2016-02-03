@@ -11,6 +11,8 @@ Public Class Form1
     Dim leftVolume As Integer
     Dim rightVolume As Integer
     Dim rate As Integer
+    Dim pitch As Integer
+    Dim tempo As Integer
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -45,7 +47,11 @@ Public Class Form1
         'set rate
         tbarRate.Value = player.GetRate()
 
+        'set pitch
+        tbPitch.Value = player.GetPitch()
 
+        'set tempo
+        tbarTempo.Value = player.GetTempo()
 
     End Sub
 
@@ -226,5 +232,13 @@ Public Class Form1
 
     Private Sub tbarRate_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarRate.Scroll
         player.SetRate(tbarRate.Value)
+    End Sub
+
+    Private Sub tbPitch_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbPitch.Scroll
+        player.SetPitch(tbPitch.Value)
+    End Sub
+
+    Private Sub tbarTempo_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarTempo.Scroll
+        player.SetTempo(tbarTempo.Value)
     End Sub
 End Class

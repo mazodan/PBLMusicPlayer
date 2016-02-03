@@ -14,6 +14,7 @@ Public Class Form1
     Dim rate As Integer
     Dim pitch As Integer
     Dim tempo As Integer
+    Dim pLoop As Boolean = False
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -258,4 +259,22 @@ Public Class Form1
             player.PausePlayback()
         End If
     End Sub
+
+    Private Sub btnLoop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoop.Click
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If Convert.ToString(status.fPlay) = True Then
+            Dim sec, loopTimes As Integer
+            Dim startpos As New TStreamTime()
+            Dim endpos As New TStreamTime()
+            player.GetPosition(startpos)
+            sec = Val(InputBox("How many seconds until Loop from your current position", "Seconds", "1"))
+            loopTimes = Val(InputBox("How many times does the loop execute", "Seconds", "3"))
+            endpos.sec = CType(startpos.sec + sec, UInteger)
+            player.PlayLoop(TTimeFormat.tfSecond, startpos, TTimeFormat.tfSecond, endpos, loopTimes, True)
+        End If
+        
+    End Sub
+
 End Class

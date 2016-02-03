@@ -61,9 +61,11 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label
         Me.tbarTempo = New System.Windows.Forms.TrackBar
         Me.lblTitle = New System.Windows.Forms.Label
+        Me.btnLoop = New System.Windows.Forms.Button
         Me.btnPause = New System.Windows.Forms.Button
         Me.btnPlay = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -418,6 +420,17 @@ Partial Class Form1
         Me.lblTitle.TabIndex = 31
         Me.lblTitle.Text = "Title"
         '
+        'btnLoop
+        '
+        Me.btnLoop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.backup_restore
+        Me.btnLoop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLoop.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnLoop.Location = New System.Drawing.Point(190, 82)
+        Me.btnLoop.Name = "btnLoop"
+        Me.btnLoop.Size = New System.Drawing.Size(30, 30)
+        Me.btnLoop.TabIndex = 36
+        Me.btnLoop.UseVisualStyleBackColor = True
+        '
         'btnPause
         '
         Me.btnPause.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.pause
@@ -448,11 +461,16 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
+        'Timer3
+        '
+        Me.Timer3.Interval = 50
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.btnLoop)
         Me.Controls.Add(Me.btnPause)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.lblTitle)
@@ -543,5 +561,7 @@ Partial Class Form1
     Friend WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents btnPlay As System.Windows.Forms.Button
     Friend WithEvents btnPause As System.Windows.Forms.Button
+    Friend WithEvents btnLoop As System.Windows.Forms.Button
+    Friend WithEvents Timer3 As System.Windows.Forms.Timer
 
 End Class

@@ -74,6 +74,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property backup_restore() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("backup-restore", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property pause() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pause", resourceCulture)

@@ -127,11 +127,13 @@ Public Class Form1
     End Sub
 
 
-    Private Sub VScrollBar1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar1.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(0, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
+    'Private Sub VScrollBar1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar1.ValueChanged
+    'If player IsNot Nothing Then
+    'player.SetEqualizerBandGain(0, 12000 - (CType(sender, VScrollBar)).Value * 1000)
+    'End If
+    'End Sub
+
+
 
     Private Sub chkEQ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkEQ.CheckedChanged
         If chkEQ.Checked = True Then
@@ -141,86 +143,11 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub VScrollBar2_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar2.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(1, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar3_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar3.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(2, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar4_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar4.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(3, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar5_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar5.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(4, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar10_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar10.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(5, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar9_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar9.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(6, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar8_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar8.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(7, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar7_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar7.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(8, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub VScrollBar6_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar6.ValueChanged
-        If player IsNot Nothing Then
-            player.SetEqualizerBandGain(9, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-        End If
-    End Sub
-
-    Private Sub btnEQAC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEQAC.Click
-        VScrollBar1.Value = 12
-        VScrollBar2.Value = 13
-        VScrollBar3.Value = 14
-        VScrollBar4.Value = 18
-        VScrollBar5.Value = 13
-        VScrollBar10.Value = 12
-        VScrollBar9.Value = 16
-        VScrollBar8.Value = 13
-        VScrollBar7.Value = 12
-        VScrollBar6.Value = 16
-
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        VScrollBar1.Value = 11
-        VScrollBar2.Value = 13
-        VScrollBar3.Value = 14
-        VScrollBar4.Value = 16
-        VScrollBar5.Value = 18
-        VScrollBar10.Value = 20
-        VScrollBar9.Value = 20
-        VScrollBar8.Value = 20
-        VScrollBar7.Value = 20
-        VScrollBar6.Value = 20
-    End Sub
+    'Private Sub btnEQAC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEQAC.Click
+    'VScrollBar1.Value = 12
+    'VScrollBar2.Value = 13
+    ' VScrollBar3.Value = 14
+    ' 
 
     Private Sub tbVol_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbVol.Scroll
         player.SetPlayerVolume(tbVol.Value, tbVol.Value)
@@ -255,7 +182,7 @@ Public Class Form1
         End If
     End Sub
 
-    
+
     Private Sub btnPause_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPause.Click
         Dim status As New TStreamStatus()
         player.GetStatus(status)
@@ -279,7 +206,7 @@ Public Class Form1
             endpos.sec = CType(startpos.sec + sec, UInteger)
             player.PlayLoop(TTimeFormat.tfSecond, startpos, TTimeFormat.tfSecond, endpos, loopTimes, True)
         End If
-        
+
     End Sub
 
     Private Sub btnRev_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRev.Click
@@ -294,6 +221,76 @@ Public Class Form1
                 player.ReverseMode(False)
                 reverse = False
             End If
+        End If
+    End Sub
+
+
+    Private Sub t32_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t32.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(0, 12000 - (func.invert(t32.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t64_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t64.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(1, 12000 - (func.invert(t64.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t125_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t125.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(2, 12000 - (func.invert(t125.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t250_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t250.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(3, 12000 - (func.invert(t250.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t500_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t500.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(4, 12000 - (func.invert(t500.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t1000_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t1000.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(5, 12000 - (func.invert(t1000.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t2000_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t2000.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(6, 12000 - (func.invert(t2000.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t4000_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t4000.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(7, 12000 - (func.invert(t4000.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t8000_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t8000.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(8, 12000 - (func.invert(t8000.Value) * 1000))
+        End If
+    End Sub
+
+    Private Sub t16000_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t16000.ValueChanged
+        If player IsNot Nothing Then
+            player.SetEqualizerBandGain(9, 12000 - (func.invert(t16000.Value) * 1000))
+        End If
+    End Sub
+
+    
+    Private Sub cmbEQ_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbEQ.SelectedValueChanged
+        If cmbEQ.SelectedItem.ToString() = "Flat" Then
+            func.EQband(t32, 12, t64, 12, t125, 12, t250, 12, t500, 12, t1000, 12, t2000, 12, t4000, 12, t8000, 12, t16000, 12)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Acoustics" Then
+            func.EQband(t32, 17, t64, 17, t125, 16, t250, 13, t500, 14, t1000, 13, t2000, 16, t4000, 17, t8000, 16, t16000, 14)
         End If
     End Sub
 End Class

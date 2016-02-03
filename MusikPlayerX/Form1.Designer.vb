@@ -35,19 +35,7 @@ Partial Class Form1
         Me.pbarSeek = New System.Windows.Forms.ProgressBar
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.chkEcho = New System.Windows.Forms.CheckBox
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar2 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar3 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar4 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar5 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar6 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar7 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar8 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar9 = New System.Windows.Forms.VScrollBar
-        Me.VScrollBar10 = New System.Windows.Forms.VScrollBar
         Me.chkEQ = New System.Windows.Forms.CheckBox
-        Me.btnEQAC = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
         Me.Label5 = New System.Windows.Forms.Label
         Me.tbVol = New System.Windows.Forms.TrackBar
         Me.Label6 = New System.Windows.Forms.Label
@@ -71,11 +59,43 @@ Partial Class Form1
         Me.btnLoad = New System.Windows.Forms.Button
         Me.lblPitch = New System.Windows.Forms.Label
         Me.lblTpo = New System.Windows.Forms.Label
+        Me.t32 = New System.Windows.Forms.TrackBar
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.t64 = New System.Windows.Forms.TrackBar
+        Me.Label12 = New System.Windows.Forms.Label
+        Me.t250 = New System.Windows.Forms.TrackBar
+        Me.Label13 = New System.Windows.Forms.Label
+        Me.t125 = New System.Windows.Forms.TrackBar
+        Me.Label14 = New System.Windows.Forms.Label
+        Me.t4000 = New System.Windows.Forms.TrackBar
+        Me.Label15 = New System.Windows.Forms.Label
+        Me.t2000 = New System.Windows.Forms.TrackBar
+        Me.Label16 = New System.Windows.Forms.Label
+        Me.t1000 = New System.Windows.Forms.TrackBar
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.t500 = New System.Windows.Forms.TrackBar
+        Me.t16000 = New System.Windows.Forms.TrackBar
+        Me.t8000 = New System.Windows.Forms.TrackBar
+        Me.Label18 = New System.Windows.Forms.Label
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.cmbEQ = New System.Windows.Forms.ComboBox
+        Me.Label20 = New System.Windows.Forms.Label
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t64, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t250, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t125, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t4000, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t2000, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t1000, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t500, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t16000, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.t8000, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OFDprime
@@ -164,140 +184,22 @@ Partial Class Form1
         'chkEcho
         '
         Me.chkEcho.AutoSize = True
-        Me.chkEcho.Location = New System.Drawing.Point(716, 247)
+        Me.chkEcho.Location = New System.Drawing.Point(201, 136)
         Me.chkEcho.Name = "chkEcho"
         Me.chkEcho.Size = New System.Drawing.Size(51, 17)
         Me.chkEcho.TabIndex = 12
         Me.chkEcho.Text = "Echo"
         Me.chkEcho.UseVisualStyleBackColor = True
         '
-        'VScrollBar1
-        '
-        Me.VScrollBar1.LargeChange = 1
-        Me.VScrollBar1.Location = New System.Drawing.Point(688, 335)
-        Me.VScrollBar1.Maximum = 40
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar1.TabIndex = 1
-        Me.VScrollBar1.Value = 20
-        '
-        'VScrollBar2
-        '
-        Me.VScrollBar2.LargeChange = 1
-        Me.VScrollBar2.Location = New System.Drawing.Point(716, 335)
-        Me.VScrollBar2.Maximum = 40
-        Me.VScrollBar2.Name = "VScrollBar2"
-        Me.VScrollBar2.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar2.TabIndex = 2
-        Me.VScrollBar2.Value = 20
-        '
-        'VScrollBar3
-        '
-        Me.VScrollBar3.LargeChange = 1
-        Me.VScrollBar3.Location = New System.Drawing.Point(740, 335)
-        Me.VScrollBar3.Maximum = 40
-        Me.VScrollBar3.Name = "VScrollBar3"
-        Me.VScrollBar3.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar3.TabIndex = 13
-        Me.VScrollBar3.Value = 20
-        '
-        'VScrollBar4
-        '
-        Me.VScrollBar4.LargeChange = 1
-        Me.VScrollBar4.Location = New System.Drawing.Point(767, 335)
-        Me.VScrollBar4.Maximum = 40
-        Me.VScrollBar4.Name = "VScrollBar4"
-        Me.VScrollBar4.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar4.TabIndex = 14
-        Me.VScrollBar4.Value = 20
-        '
-        'VScrollBar5
-        '
-        Me.VScrollBar5.LargeChange = 1
-        Me.VScrollBar5.Location = New System.Drawing.Point(794, 335)
-        Me.VScrollBar5.Maximum = 40
-        Me.VScrollBar5.Name = "VScrollBar5"
-        Me.VScrollBar5.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar5.TabIndex = 15
-        Me.VScrollBar5.Value = 20
-        '
-        'VScrollBar6
-        '
-        Me.VScrollBar6.LargeChange = 1
-        Me.VScrollBar6.Location = New System.Drawing.Point(926, 335)
-        Me.VScrollBar6.Maximum = 40
-        Me.VScrollBar6.Name = "VScrollBar6"
-        Me.VScrollBar6.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar6.TabIndex = 20
-        Me.VScrollBar6.Value = 20
-        '
-        'VScrollBar7
-        '
-        Me.VScrollBar7.LargeChange = 1
-        Me.VScrollBar7.Location = New System.Drawing.Point(899, 335)
-        Me.VScrollBar7.Maximum = 40
-        Me.VScrollBar7.Name = "VScrollBar7"
-        Me.VScrollBar7.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar7.TabIndex = 19
-        Me.VScrollBar7.Value = 20
-        '
-        'VScrollBar8
-        '
-        Me.VScrollBar8.LargeChange = 1
-        Me.VScrollBar8.Location = New System.Drawing.Point(872, 335)
-        Me.VScrollBar8.Maximum = 40
-        Me.VScrollBar8.Name = "VScrollBar8"
-        Me.VScrollBar8.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar8.TabIndex = 18
-        Me.VScrollBar8.Value = 20
-        '
-        'VScrollBar9
-        '
-        Me.VScrollBar9.LargeChange = 1
-        Me.VScrollBar9.Location = New System.Drawing.Point(848, 335)
-        Me.VScrollBar9.Maximum = 40
-        Me.VScrollBar9.Name = "VScrollBar9"
-        Me.VScrollBar9.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar9.TabIndex = 17
-        Me.VScrollBar9.Value = 20
-        '
-        'VScrollBar10
-        '
-        Me.VScrollBar10.LargeChange = 1
-        Me.VScrollBar10.Location = New System.Drawing.Point(820, 335)
-        Me.VScrollBar10.Maximum = 40
-        Me.VScrollBar10.Name = "VScrollBar10"
-        Me.VScrollBar10.Size = New System.Drawing.Size(17, 156)
-        Me.VScrollBar10.TabIndex = 16
-        Me.VScrollBar10.Value = 20
-        '
         'chkEQ
         '
         Me.chkEQ.AutoSize = True
-        Me.chkEQ.Location = New System.Drawing.Point(688, 303)
+        Me.chkEQ.Location = New System.Drawing.Point(666, 278)
         Me.chkEQ.Name = "chkEQ"
         Me.chkEQ.Size = New System.Drawing.Size(41, 17)
         Me.chkEQ.TabIndex = 21
         Me.chkEQ.Text = "EQ"
         Me.chkEQ.UseVisualStyleBackColor = True
-        '
-        'btnEQAC
-        '
-        Me.btnEQAC.Location = New System.Drawing.Point(576, 434)
-        Me.btnEQAC.Name = "btnEQAC"
-        Me.btnEQAC.Size = New System.Drawing.Size(75, 23)
-        Me.btnEQAC.TabIndex = 22
-        Me.btnEQAC.Text = "Acoustic"
-        Me.btnEQAC.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(576, 463)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(99, 23)
-        Me.Button1.TabIndex = 23
-        Me.Button1.Text = "Bass Booster"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -528,11 +430,252 @@ Partial Class Form1
         Me.lblTpo.TabIndex = 42
         Me.lblTpo.Text = "100"
         '
+        't32
+        '
+        Me.t32.Location = New System.Drawing.Point(613, 316)
+        Me.t32.Maximum = 24
+        Me.t32.Name = "t32"
+        Me.t32.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t32.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.t32.Size = New System.Drawing.Size(45, 153)
+        Me.t32.TabIndex = 43
+        Me.t32.TickFrequency = 3
+        Me.t32.Value = 12
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(619, 472)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(19, 13)
+        Me.Label4.TabIndex = 44
+        Me.Label4.Text = "32"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(656, 472)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(19, 13)
+        Me.Label11.TabIndex = 46
+        Me.Label11.Text = "64"
+        '
+        't64
+        '
+        Me.t64.Location = New System.Drawing.Point(649, 316)
+        Me.t64.Maximum = 24
+        Me.t64.Name = "t64"
+        Me.t64.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t64.Size = New System.Drawing.Size(45, 153)
+        Me.t64.TabIndex = 45
+        Me.t64.TickFrequency = 3
+        Me.t64.Value = 12
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(720, 472)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(25, 13)
+        Me.Label12.TabIndex = 50
+        Me.Label12.Text = "250"
+        '
+        't250
+        '
+        Me.t250.Location = New System.Drawing.Point(723, 316)
+        Me.t250.Maximum = 24
+        Me.t250.Name = "t250"
+        Me.t250.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t250.Size = New System.Drawing.Size(45, 153)
+        Me.t250.TabIndex = 49
+        Me.t250.TickFrequency = 3
+        Me.t250.Value = 12
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(683, 472)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(25, 13)
+        Me.Label13.TabIndex = 48
+        Me.Label13.Text = "125"
+        '
+        't125
+        '
+        Me.t125.Location = New System.Drawing.Point(686, 316)
+        Me.t125.Maximum = 24
+        Me.t125.Name = "t125"
+        Me.t125.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t125.Size = New System.Drawing.Size(45, 153)
+        Me.t125.TabIndex = 47
+        Me.t125.TickFrequency = 3
+        Me.t125.Value = 12
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(867, 472)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(20, 13)
+        Me.Label14.TabIndex = 58
+        Me.Label14.Text = "4K"
+        '
+        't4000
+        '
+        Me.t4000.Location = New System.Drawing.Point(870, 316)
+        Me.t4000.Maximum = 24
+        Me.t4000.Name = "t4000"
+        Me.t4000.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t4000.Size = New System.Drawing.Size(45, 153)
+        Me.t4000.TabIndex = 57
+        Me.t4000.TickFrequency = 3
+        Me.t4000.Value = 12
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(830, 472)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(20, 13)
+        Me.Label15.TabIndex = 56
+        Me.Label15.Text = "2K"
+        '
+        't2000
+        '
+        Me.t2000.Location = New System.Drawing.Point(833, 316)
+        Me.t2000.Maximum = 24
+        Me.t2000.Name = "t2000"
+        Me.t2000.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t2000.Size = New System.Drawing.Size(45, 153)
+        Me.t2000.TabIndex = 55
+        Me.t2000.TickFrequency = 3
+        Me.t2000.Value = 12
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(793, 472)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(20, 13)
+        Me.Label16.TabIndex = 54
+        Me.Label16.Text = "1K"
+        '
+        't1000
+        '
+        Me.t1000.Location = New System.Drawing.Point(796, 316)
+        Me.t1000.Maximum = 24
+        Me.t1000.Name = "t1000"
+        Me.t1000.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t1000.Size = New System.Drawing.Size(45, 153)
+        Me.t1000.TabIndex = 53
+        Me.t1000.TickFrequency = 3
+        Me.t1000.Value = 12
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(757, 472)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(25, 13)
+        Me.Label17.TabIndex = 52
+        Me.Label17.Text = "500"
+        '
+        't500
+        '
+        Me.t500.Location = New System.Drawing.Point(760, 316)
+        Me.t500.Maximum = 24
+        Me.t500.Name = "t500"
+        Me.t500.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t500.Size = New System.Drawing.Size(45, 153)
+        Me.t500.TabIndex = 51
+        Me.t500.TickFrequency = 3
+        Me.t500.Value = 12
+        '
+        't16000
+        '
+        Me.t16000.Location = New System.Drawing.Point(941, 316)
+        Me.t16000.Maximum = 24
+        Me.t16000.Name = "t16000"
+        Me.t16000.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t16000.Size = New System.Drawing.Size(45, 153)
+        Me.t16000.TabIndex = 60
+        Me.t16000.TickFrequency = 3
+        Me.t16000.Value = 12
+        '
+        't8000
+        '
+        Me.t8000.Location = New System.Drawing.Point(904, 316)
+        Me.t8000.Maximum = 24
+        Me.t8000.Name = "t8000"
+        Me.t8000.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.t8000.Size = New System.Drawing.Size(45, 153)
+        Me.t8000.TabIndex = 59
+        Me.t8000.TickFrequency = 3
+        Me.t8000.Value = 12
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(901, 472)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(20, 13)
+        Me.Label18.TabIndex = 61
+        Me.Label18.Text = "8K"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(938, 472)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(26, 13)
+        Me.Label19.TabIndex = 62
+        Me.Label19.Text = "16K"
+        '
+        'cmbEQ
+        '
+        Me.cmbEQ.FormattingEnabled = True
+        Me.cmbEQ.Items.AddRange(New Object() {"Flat", "Acoustics", "Bass Booster"})
+        Me.cmbEQ.Location = New System.Drawing.Point(796, 276)
+        Me.cmbEQ.Name = "cmbEQ"
+        Me.cmbEQ.Size = New System.Drawing.Size(121, 21)
+        Me.cmbEQ.TabIndex = 63
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(728, 279)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(60, 13)
+        Me.Label20.TabIndex = 64
+        Me.Label20.Text = "EQ Presets"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.cmbEQ)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.t16000)
+        Me.Controls.Add(Me.t8000)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.t4000)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.t2000)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.t1000)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.t500)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.t250)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.t125)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.t64)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.t32)
         Me.Controls.Add(Me.lblTpo)
         Me.Controls.Add(Me.lblPitch)
         Me.Controls.Add(Me.btnRev)
@@ -553,19 +696,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.tbVol)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnEQAC)
         Me.Controls.Add(Me.chkEQ)
-        Me.Controls.Add(Me.VScrollBar6)
-        Me.Controls.Add(Me.VScrollBar7)
-        Me.Controls.Add(Me.VScrollBar8)
-        Me.Controls.Add(Me.VScrollBar9)
-        Me.Controls.Add(Me.VScrollBar10)
-        Me.Controls.Add(Me.VScrollBar5)
-        Me.Controls.Add(Me.VScrollBar4)
-        Me.Controls.Add(Me.VScrollBar3)
-        Me.Controls.Add(Me.VScrollBar2)
-        Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.chkEcho)
         Me.Controls.Add(Me.pbarSeek)
         Me.Controls.Add(Me.PictureBox1)
@@ -584,6 +715,16 @@ Partial Class Form1
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t64, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t250, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t125, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t4000, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t2000, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t1000, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t500, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t16000, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.t8000, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -602,19 +743,7 @@ Partial Class Form1
     Friend WithEvents pbarSeek As System.Windows.Forms.ProgressBar
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
     Friend WithEvents chkEcho As System.Windows.Forms.CheckBox
-    Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar2 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar3 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar4 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar5 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar6 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar7 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar8 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar9 As System.Windows.Forms.VScrollBar
-    Friend WithEvents VScrollBar10 As System.Windows.Forms.VScrollBar
     Friend WithEvents chkEQ As System.Windows.Forms.CheckBox
-    Friend WithEvents btnEQAC As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents tbVol As System.Windows.Forms.TrackBar
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -636,5 +765,27 @@ Partial Class Form1
     Friend WithEvents btnRev As System.Windows.Forms.Button
     Friend WithEvents lblPitch As System.Windows.Forms.Label
     Friend WithEvents lblTpo As System.Windows.Forms.Label
+    Friend WithEvents t32 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents t64 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents t250 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents t125 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents t4000 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents t2000 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents t1000 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents t500 As System.Windows.Forms.TrackBar
+    Friend WithEvents t16000 As System.Windows.Forms.TrackBar
+    Friend WithEvents t8000 As System.Windows.Forms.TrackBar
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents cmbEQ As System.Windows.Forms.ComboBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
 
 End Class

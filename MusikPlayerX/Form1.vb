@@ -10,6 +10,7 @@ Public Class Form1
     Dim filename As String
     Dim leftVolume As Integer
     Dim rightVolume As Integer
+    Dim rate As Integer
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -40,6 +41,12 @@ Public Class Form1
         'get Internal Volume
         player.GetPlayerVolume(leftVolume, rightVolume)
         tbVol.Value = leftVolume
+
+        'set rate
+        tbarRate.Value = player.GetRate()
+
+
+
     End Sub
 
     Private Sub btnPlay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPlay.Click
@@ -96,6 +103,7 @@ Public Class Form1
         End If
 
         Label5.Text = player.GetBitrate(True).ToString() + " kbps"
+        lblPOS.Text = Format(pos.hms.hour, "00") & ":" & Format(pos.hms.minute, "00") & ":" & Format(pos.hms.second, "00")
     End Sub
 
 
@@ -214,5 +222,9 @@ Public Class Form1
 
     Private Sub tbVol_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbVol.Scroll
         player.SetPlayerVolume(tbVol.Value, tbVol.Value)
+    End Sub
+
+    Private Sub tbarRate_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarRate.Scroll
+        player.SetRate(tbarRate.Value)
     End Sub
 End Class

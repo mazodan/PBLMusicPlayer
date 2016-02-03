@@ -60,6 +60,13 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property album() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("album", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property arrow_right_bold_circle() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("arrow-right-bold-circle", resourceCulture)

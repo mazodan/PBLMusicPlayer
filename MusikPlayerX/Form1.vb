@@ -78,7 +78,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnBPM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBPM.Click
-        lblBPM.Text = player.DetectBPM(TBPMDetectionMethod.dmAutoCorrelation)
+        lblBPM.Text = player.DetectBPM(TBPMDetectionMethod.dmAutoCorrelation).ToString() + " BPM"
         player.StartPlayback()
         Timer1.Start()
         Timer2.Start()

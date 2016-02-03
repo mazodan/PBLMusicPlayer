@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.OFDprime = New System.Windows.Forms.OpenFileDialog
-        Me.btnLoad = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.pbarLeft = New System.Windows.Forms.ProgressBar
         Me.pbarRight = New System.Windows.Forms.ProgressBar
@@ -61,11 +60,13 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label
         Me.tbarTempo = New System.Windows.Forms.TrackBar
         Me.lblTitle = New System.Windows.Forms.Label
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label10 = New System.Windows.Forms.Label
         Me.btnLoop = New System.Windows.Forms.Button
         Me.btnPause = New System.Windows.Forms.Button
         Me.btnPlay = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnLoad = New System.Windows.Forms.Button
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,15 +77,6 @@ Partial Class Form1
         'OFDprime
         '
         Me.OFDprime.Filter = "MP3 files (*.mp3)|*.mp3"
-        '
-        'btnLoad
-        '
-        Me.btnLoad.Location = New System.Drawing.Point(516, 290)
-        Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(75, 32)
-        Me.btnLoad.TabIndex = 1
-        Me.btnLoad.Text = "Load MP3"
-        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -135,7 +127,7 @@ Partial Class Form1
         '
         'btnBPM
         '
-        Me.btnBPM.Location = New System.Drawing.Point(100, 258)
+        Me.btnBPM.Location = New System.Drawing.Point(12, 133)
         Me.btnBPM.Name = "btnBPM"
         Me.btnBPM.Size = New System.Drawing.Size(75, 23)
         Me.btnBPM.TabIndex = 7
@@ -145,11 +137,13 @@ Partial Class Form1
         'lblBPM
         '
         Me.lblBPM.AutoSize = True
-        Me.lblBPM.Location = New System.Drawing.Point(115, 288)
+        Me.lblBPM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBPM.ForeColor = System.Drawing.Color.Purple
+        Me.lblBPM.Location = New System.Drawing.Point(132, 136)
         Me.lblBPM.Name = "lblBPM"
-        Me.lblBPM.Size = New System.Drawing.Size(34, 13)
+        Me.lblBPM.Size = New System.Drawing.Size(48, 16)
         Me.lblBPM.TabIndex = 8
-        Me.lblBPM.Text = "Beats"
+        Me.lblBPM.Text = "BPM?"
         '
         'Label4
         '
@@ -420,12 +414,25 @@ Partial Class Form1
         Me.lblTitle.TabIndex = 31
         Me.lblTitle.Text = "Title"
         '
+        'Timer3
+        '
+        Me.Timer3.Interval = 50
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(93, 138)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(33, 13)
+        Me.Label10.TabIndex = 37
+        Me.Label10.Text = "BPM:"
+        '
         'btnLoop
         '
         Me.btnLoop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.backup_restore
         Me.btnLoop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLoop.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnLoop.Location = New System.Drawing.Point(190, 82)
+        Me.btnLoop.Location = New System.Drawing.Point(222, 82)
         Me.btnLoop.Name = "btnLoop"
         Me.btnLoop.Size = New System.Drawing.Size(30, 30)
         Me.btnLoop.TabIndex = 36
@@ -436,7 +443,7 @@ Partial Class Form1
         Me.btnPause.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.pause
         Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPause.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnPause.Location = New System.Drawing.Point(154, 82)
+        Me.btnPause.Location = New System.Drawing.Point(186, 82)
         Me.btnPause.Name = "btnPause"
         Me.btnPause.Size = New System.Drawing.Size(30, 30)
         Me.btnPause.TabIndex = 35
@@ -446,7 +453,7 @@ Partial Class Form1
         '
         Me.btnPlay.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.arrow_right_drop_circle
         Me.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPlay.Location = New System.Drawing.Point(118, 82)
+        Me.btnPlay.Location = New System.Drawing.Point(150, 82)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(30, 30)
         Me.btnPlay.TabIndex = 34
@@ -461,15 +468,22 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
-        'Timer3
+        'btnLoad
         '
-        Me.Timer3.Interval = 50
+        Me.btnLoad.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.album
+        Me.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLoad.Location = New System.Drawing.Point(114, 82)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(30, 30)
+        Me.btnLoad.TabIndex = 1
+        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnLoop)
         Me.Controls.Add(Me.btnPause)
         Me.Controls.Add(Me.btnPlay)
@@ -563,5 +577,6 @@ Partial Class Form1
     Friend WithEvents btnPause As System.Windows.Forms.Button
     Friend WithEvents btnLoop As System.Windows.Forms.Button
     Friend WithEvents Timer3 As System.Windows.Forms.Timer
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 
 End Class

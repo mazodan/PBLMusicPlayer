@@ -87,30 +87,32 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(510, 17)
+        Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label1.Location = New System.Drawing.Point(396, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 13)
+        Me.Label1.Size = New System.Drawing.Size(69, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "VU METER"
         '
         'pbarLeft
         '
-        Me.pbarLeft.Location = New System.Drawing.Point(513, 43)
+        Me.pbarLeft.Location = New System.Drawing.Point(399, 79)
         Me.pbarLeft.Name = "pbarLeft"
-        Me.pbarLeft.Size = New System.Drawing.Size(180, 23)
+        Me.pbarLeft.Size = New System.Drawing.Size(252, 23)
         Me.pbarLeft.TabIndex = 3
         '
         'pbarRight
         '
-        Me.pbarRight.Location = New System.Drawing.Point(513, 72)
+        Me.pbarRight.Location = New System.Drawing.Point(399, 108)
         Me.pbarRight.Name = "pbarRight"
-        Me.pbarRight.Size = New System.Drawing.Size(180, 23)
+        Me.pbarRight.Size = New System.Drawing.Size(252, 23)
         Me.pbarRight.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(494, 53)
+        Me.Label2.Location = New System.Drawing.Point(380, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(13, 13)
         Me.Label2.TabIndex = 5
@@ -119,7 +121,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(494, 82)
+        Me.Label3.Location = New System.Drawing.Point(380, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(15, 13)
         Me.Label3.TabIndex = 6
@@ -131,7 +133,7 @@ Partial Class Form1
         '
         'btnBPM
         '
-        Me.btnBPM.Location = New System.Drawing.Point(453, 149)
+        Me.btnBPM.Location = New System.Drawing.Point(100, 258)
         Me.btnBPM.Name = "btnBPM"
         Me.btnBPM.Size = New System.Drawing.Size(75, 23)
         Me.btnBPM.TabIndex = 7
@@ -141,7 +143,7 @@ Partial Class Form1
         'lblBPM
         '
         Me.lblBPM.AutoSize = True
-        Me.lblBPM.Location = New System.Drawing.Point(468, 179)
+        Me.lblBPM.Location = New System.Drawing.Point(115, 288)
         Me.lblBPM.Name = "lblBPM"
         Me.lblBPM.Size = New System.Drawing.Size(34, 13)
         Me.lblBPM.TabIndex = 8
@@ -171,7 +173,7 @@ Partial Class Form1
         'chkEcho
         '
         Me.chkEcho.AutoSize = True
-        Me.chkEcho.Location = New System.Drawing.Point(591, 16)
+        Me.chkEcho.Location = New System.Drawing.Point(716, 247)
         Me.chkEcho.Name = "chkEcho"
         Me.chkEcho.Size = New System.Drawing.Size(51, 17)
         Me.chkEcho.TabIndex = 12
@@ -283,9 +285,9 @@ Partial Class Form1
         Me.chkEQ.AutoSize = True
         Me.chkEQ.Location = New System.Drawing.Point(688, 303)
         Me.chkEQ.Name = "chkEQ"
-        Me.chkEQ.Size = New System.Drawing.Size(51, 17)
+        Me.chkEQ.Size = New System.Drawing.Size(41, 17)
         Me.chkEQ.TabIndex = 21
-        Me.chkEQ.Text = "Echo"
+        Me.chkEQ.Text = "EQ"
         Me.chkEQ.UseVisualStyleBackColor = True
         '
         'btnEQAC
@@ -311,7 +313,7 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Navy
-        Me.Label5.Location = New System.Drawing.Point(304, 92)
+        Me.Label5.Location = New System.Drawing.Point(304, 85)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 21)
         Me.Label5.TabIndex = 24
@@ -419,21 +421,21 @@ Partial Class Form1
         'btnPause
         '
         Me.btnPause.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.pause
-        Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPause.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnPause.Location = New System.Drawing.Point(166, 82)
+        Me.btnPause.Location = New System.Drawing.Point(154, 82)
         Me.btnPause.Name = "btnPause"
-        Me.btnPause.Size = New System.Drawing.Size(42, 42)
+        Me.btnPause.Size = New System.Drawing.Size(30, 30)
         Me.btnPause.TabIndex = 35
         Me.btnPause.UseVisualStyleBackColor = True
         '
         'btnPlay
         '
         Me.btnPlay.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.arrow_right_drop_circle
-        Me.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPlay.Location = New System.Drawing.Point(118, 82)
         Me.btnPlay.Name = "btnPlay"
-        Me.btnPlay.Size = New System.Drawing.Size(42, 42)
+        Me.btnPlay.Size = New System.Drawing.Size(30, 30)
         Me.btnPlay.TabIndex = 34
         Me.btnPlay.UseVisualStyleBackColor = True
         '
@@ -450,7 +452,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1208, 494)
+        Me.ClientSize = New System.Drawing.Size(1024, 494)
         Me.Controls.Add(Me.btnPause)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.lblTitle)

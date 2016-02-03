@@ -15,6 +15,7 @@ Public Class Form1
     Dim pitch As Integer
     Dim tempo As Integer
     Dim pLoop As Boolean = False
+    Dim reverse As Boolean = False
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -233,10 +234,12 @@ Public Class Form1
 
     Private Sub tbPitch_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbPitch.Scroll
         player.SetPitch(tbPitch.Value)
+        lblPitch.Text = tbPitch.Value
     End Sub
 
     Private Sub tbarTempo_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbarTempo.Scroll
         player.SetTempo(tbarTempo.Value)
+        lblTpo.Text = tbarTempo.Value
     End Sub
 
     Public Sub ShowInfo()
@@ -279,4 +282,18 @@ Public Class Form1
         
     End Sub
 
+    Private Sub btnRev_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRev.Click
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If Convert.ToString(status.fPlay) = True Then
+            If reverse = False Then
+                player.ReverseMode(True)
+                reverse = True
+            Else
+                player.ReverseMode(False)
+                reverse = False
+            End If
+        End If
+    End Sub
 End Class

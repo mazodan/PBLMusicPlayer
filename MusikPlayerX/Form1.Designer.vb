@@ -61,13 +61,16 @@ Partial Class Form1
         Me.lblTitle = New System.Windows.Forms.Label
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Label10 = New System.Windows.Forms.Label
+        Me.lblVol = New System.Windows.Forms.Label
+        Me.lblRate = New System.Windows.Forms.Label
+        Me.btnRev = New System.Windows.Forms.Button
         Me.btnLoop = New System.Windows.Forms.Button
         Me.btnPause = New System.Windows.Forms.Button
         Me.btnPlay = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btnLoad = New System.Windows.Forms.Button
-        Me.lblVol = New System.Windows.Forms.Label
-        Me.lblRate = New System.Windows.Forms.Label
+        Me.lblPitch = New System.Windows.Forms.Label
+        Me.lblTpo = New System.Windows.Forms.Label
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,7 +322,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 173)
+        Me.Label6.Location = New System.Drawing.Point(17, 173)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 13)
         Me.Label6.TabIndex = 26
@@ -358,15 +361,15 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(408, 232)
+        Me.Label8.Location = New System.Drawing.Point(329, 173)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.Size = New System.Drawing.Size(31, 13)
         Me.Label8.TabIndex = 30
-        Me.Label8.Text = "pitch"
+        Me.Label8.Text = "Pitch"
         '
         'tbPitch
         '
-        Me.tbPitch.Location = New System.Drawing.Point(411, 259)
+        Me.tbPitch.Location = New System.Drawing.Point(338, 202)
         Me.tbPitch.Maximum = 150
         Me.tbPitch.Minimum = 50
         Me.tbPitch.Name = "tbPitch"
@@ -378,7 +381,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(809, 173)
+        Me.Label9.Location = New System.Drawing.Point(329, 249)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 32
@@ -386,7 +389,7 @@ Partial Class Form1
         '
         'tbarTempo
         '
-        Me.tbarTempo.Location = New System.Drawing.Point(812, 200)
+        Me.tbarTempo.Location = New System.Drawing.Point(338, 265)
         Me.tbarTempo.Maximum = 150
         Me.tbarTempo.Minimum = 50
         Me.tbarTempo.Name = "tbarTempo"
@@ -418,6 +421,39 @@ Partial Class Form1
         Me.Label10.Size = New System.Drawing.Size(33, 13)
         Me.Label10.TabIndex = 37
         Me.Label10.Text = "BPM:"
+        '
+        'lblVol
+        '
+        Me.lblVol.AutoSize = True
+        Me.lblVol.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblVol.Location = New System.Drawing.Point(296, 202)
+        Me.lblVol.Name = "lblVol"
+        Me.lblVol.Size = New System.Drawing.Size(36, 19)
+        Me.lblVol.TabIndex = 38
+        Me.lblVol.Text = "100"
+        '
+        'lblRate
+        '
+        Me.lblRate.AutoSize = True
+        Me.lblRate.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRate.ForeColor = System.Drawing.Color.Olive
+        Me.lblRate.Location = New System.Drawing.Point(296, 275)
+        Me.lblRate.Name = "lblRate"
+        Me.lblRate.Size = New System.Drawing.Size(36, 19)
+        Me.lblRate.TabIndex = 39
+        Me.lblRate.Text = "100"
+        '
+        'btnRev
+        '
+        Me.btnRev.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.rangiticonmi9
+        Me.btnRev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRev.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnRev.Location = New System.Drawing.Point(258, 82)
+        Me.btnRev.Name = "btnRev"
+        Me.btnRev.Size = New System.Drawing.Size(30, 30)
+        Me.btnRev.TabIndex = 40
+        Me.btnRev.UseVisualStyleBackColor = True
         '
         'btnLoop
         '
@@ -470,33 +506,36 @@ Partial Class Form1
         Me.btnLoad.TabIndex = 1
         Me.btnLoad.UseVisualStyleBackColor = True
         '
-        'lblVol
+        'lblPitch
         '
-        Me.lblVol.AutoSize = True
-        Me.lblVol.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblVol.Location = New System.Drawing.Point(296, 202)
-        Me.lblVol.Name = "lblVol"
-        Me.lblVol.Size = New System.Drawing.Size(36, 19)
-        Me.lblVol.TabIndex = 38
-        Me.lblVol.Text = "100"
+        Me.lblPitch.AutoSize = True
+        Me.lblPitch.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPitch.ForeColor = System.Drawing.Color.Purple
+        Me.lblPitch.Location = New System.Drawing.Point(622, 202)
+        Me.lblPitch.Name = "lblPitch"
+        Me.lblPitch.Size = New System.Drawing.Size(36, 19)
+        Me.lblPitch.TabIndex = 41
+        Me.lblPitch.Text = "100"
         '
-        'lblRate
+        'lblTpo
         '
-        Me.lblRate.AutoSize = True
-        Me.lblRate.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRate.ForeColor = System.Drawing.Color.Olive
-        Me.lblRate.Location = New System.Drawing.Point(296, 275)
-        Me.lblRate.Name = "lblRate"
-        Me.lblRate.Size = New System.Drawing.Size(36, 19)
-        Me.lblRate.TabIndex = 39
-        Me.lblRate.Text = "100"
+        Me.lblTpo.AutoSize = True
+        Me.lblTpo.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTpo.ForeColor = System.Drawing.Color.Purple
+        Me.lblTpo.Location = New System.Drawing.Point(622, 275)
+        Me.lblTpo.Name = "lblTpo"
+        Me.lblTpo.Size = New System.Drawing.Size(36, 19)
+        Me.lblTpo.TabIndex = 42
+        Me.lblTpo.Text = "100"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.lblTpo)
+        Me.Controls.Add(Me.lblPitch)
+        Me.Controls.Add(Me.btnRev)
         Me.Controls.Add(Me.lblRate)
         Me.Controls.Add(Me.lblVol)
         Me.Controls.Add(Me.Label10)
@@ -594,5 +633,8 @@ Partial Class Form1
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents lblVol As System.Windows.Forms.Label
     Friend WithEvents lblRate As System.Windows.Forms.Label
+    Friend WithEvents btnRev As System.Windows.Forms.Button
+    Friend WithEvents lblPitch As System.Windows.Forms.Label
+    Friend WithEvents lblTpo As System.Windows.Forms.Label
 
 End Class

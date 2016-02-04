@@ -127,11 +127,6 @@ Public Class Form1
     End Sub
 
 
-    'Private Sub VScrollBar1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VScrollBar1.ValueChanged
-    'If player IsNot Nothing Then
-    'player.SetEqualizerBandGain(0, 12000 - (CType(sender, VScrollBar)).Value * 1000)
-    'End If
-    'End Sub
 
 
 
@@ -143,11 +138,6 @@ Public Class Form1
         End If
     End Sub
 
-    'Private Sub btnEQAC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEQAC.Click
-    'VScrollBar1.Value = 12
-    'VScrollBar2.Value = 13
-    ' VScrollBar3.Value = 14
-    ' 
 
     Private Sub tbVol_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbVol.Scroll
         player.SetPlayerVolume(tbVol.Value, tbVol.Value)
@@ -285,12 +275,52 @@ Public Class Form1
         End If
     End Sub
 
-    
+    'EQ presets straight from the Itunes (only an approximation tho)
     Private Sub cmbEQ_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbEQ.SelectedValueChanged
         If cmbEQ.SelectedItem.ToString() = "Flat" Then
             func.EQband(t32, 12, t64, 12, t125, 12, t250, 12, t500, 12, t1000, 12, t2000, 12, t4000, 12, t8000, 12, t16000, 12)
         ElseIf cmbEQ.SelectedItem.ToString() = "Acoustics" Then
             func.EQband(t32, 17, t64, 17, t125, 16, t250, 13, t500, 14, t1000, 13, t2000, 16, t4000, 17, t8000, 16, t16000, 14)
-        End If
+        ElseIf cmbEQ.SelectedItem.ToString() = "Bass Booster" Then
+            func.EQband(t32, 17, t64, 16, t125, 16, t250, 14, t500, 13, t1000, 12, t2000, 12, t4000, 12, t8000, 12, t16000, 12)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Bass Reducer" Then
+            func.EQband(t32, 7, t64, 8, t125, 8, t250, 10, t500, 11, t1000, 12, t2000, 12, t4000, 12, t8000, 12, t16000, 12)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Classical" Then
+            func.EQband(t32, 16, t64, 16, t125, 15, t250, 14, t500, 11, t1000, 11, t2000, 12, t4000, 14, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Dance" Then
+            func.EQband(t32, 16, t64, 19, t125, 17, t250, 12, t500, 14, t1000, 16, t2000, 17, t4000, 16, t8000, 16, t16000, 12)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Deep" Then
+            func.EQband(t32, 17, t64, 16, t125, 14, t250, 13, t500, 15, t1000, 14, t2000, 13, t4000, 10, t8000, 8, t16000, 7)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Electronic" Then
+            func.EQband(t32, 16, t64, 16, t125, 13, t250, 12, t500, 10, t1000, 14, t2000, 13, t4000, 13, t8000, 16, t16000, 17)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Hip-Hop" Then
+            func.EQband(t32, 17, t64, 16, t125, 13, t250, 15, t500, 11, t1000, 11, t2000, 13, t4000, 11, t8000, 14, t16000, 15)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Jazz" Then
+            func.EQband(t32, 16, t64, 15, t125, 14, t250, 15, t500, 11, t1000, 11, t2000, 12, t4000, 13, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Latin" Then
+            func.EQband(t32, 16, t64, 15, t125, 12, t250, 12, t500, 11, t1000, 11, t2000, 11, t4000, 12, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Loudness" Then
+            func.EQband(t32, 18, t64, 16, t125, 12, t250, 12, t500, 10, t1000, 12, t2000, 11, t4000, 7, t8000, 17, t16000, 13)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Lounge" Then
+            func.EQband(t32, 9, t64, 10, t125, 11, t250, 13, t500, 16, t1000, 14, t2000, 13, t4000, 11, t8000, 14, t16000, 13)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Piano" Then
+            func.EQband(t32, 15, t64, 14, t125, 12, t250, 14, t500, 15, t1000, 13, t2000, 16, t4000, 17, t8000, 14, t16000, 15)
+        ElseIf cmbEQ.SelectedItem.ToString() = "R&B" Then
+            func.EQband(t32, 14, t64, 19, t125, 18, t250, 13, t500, 10, t1000, 11, t2000, 14, t4000, 15, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "R&B" Then
+            func.EQband(t32, 14, t64, 19, t125, 18, t250, 13, t500, 10, t1000, 11, t2000, 14, t4000, 15, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Rock" Then
+            func.EQband(t32, 17, t64, 16, t125, 15, t250, 13, t500, 11, t1000, 11, t2000, 13, t4000, 14, t8000, 15, t16000, 16)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Small Speakers" Then
+            func.EQband(t32, 17, t64, 16, t125, 15, t250, 14, t500, 13, t1000, 12, t2000, 11, t4000, 10, t8000, 8, t16000, 7)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Spoken Word" Then
+            func.EQband(t32, 9, t64, 11, t125, 12, t250, 13, t500, 16, t1000, 17, t2000, 17, t4000, 16, t8000, 14, t16000, 12)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Treble Booster" Then
+            func.EQband(t32, 12, t64, 12, t125, 12, t250, 12, t500, 12, t1000, 13, t2000, 14, t4000, 15, t8000, 16, t16000, 17)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Treble Reducer" Then
+            func.EQband(t32, 12, t64, 12, t125, 12, t250, 12, t500, 12, t1000, 11, t2000, 10, t4000, 8, t8000, 7, t16000, 6)
+        ElseIf cmbEQ.SelectedItem.ToString() = "Vocal Booster" Then
+            func.EQband(t32, 11, t64, 9, t125, 9, t250, 14, t500, 16, t1000, 16, t2000, 15, t4000, 13, t8000, 12, t16000, 11)
+        End If 
     End Sub
 End Class

@@ -634,7 +634,7 @@ Partial Class Form1
         'cmbEQ
         '
         Me.cmbEQ.FormattingEnabled = True
-        Me.cmbEQ.Items.AddRange(New Object() {"Flat", "Acoustics", "Bass Booster"})
+        Me.cmbEQ.Items.AddRange(New Object() {"Flat", "Acoustics", "Bass Booster", "Bass Reducer", "Classical", "Dance", "Deep", "Electronic", "Hip-Hop", "Jazz", "Latin", "Loudness", "Lounge", "Piano", "R&B", "Rock", "Small Speakers", "Spoken Word", "Treble Booster", "Treble Reducer", "Vocal Booster"})
         Me.cmbEQ.Location = New System.Drawing.Point(796, 276)
         Me.cmbEQ.Name = "cmbEQ"
         Me.cmbEQ.Size = New System.Drawing.Size(121, 21)

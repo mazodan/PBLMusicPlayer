@@ -15,6 +15,8 @@ Public Class Functionality
         pbarR.Value = rightvux
     End Sub
 
+
+    'the largest subroutine that i have ever done, too many parameters
     Sub EQband(ByVal t32 As TrackBar, ByVal b0 As Integer, ByVal t64 As TrackBar, ByVal b1 As Integer, _
                ByVal t125 As TrackBar, ByVal b2 As Integer, ByVal t250 As TrackBar, ByVal b3 As Integer, _
                ByVal t500 As TrackBar, ByVal b4 As Integer, ByVal t1000 As TrackBar, ByVal b5 As Integer, _

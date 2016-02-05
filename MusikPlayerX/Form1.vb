@@ -59,7 +59,16 @@ Public Class Form1
     End Sub
 
     Private Sub btnPlay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPlay.Click
-        player.ResumePlayback()
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If status.fPause = True Then
+            player.ResumePlayback()
+        Else
+            func.load(player, OFDprime.FileName)
+        End If
+
+
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click

@@ -214,7 +214,7 @@ Public Class Form1
         End If
     End Sub
 
-
+    'for manual EQ
     Private Sub t32_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles t32.ValueChanged
         If player IsNot Nothing Then
             player.SetEqualizerBandGain(0, 12000 - (func.invert(t32.Value) * 1000))
@@ -322,5 +322,9 @@ Public Class Form1
         ElseIf cmbEQ.SelectedItem.ToString() = "Vocal Booster" Then
             func.EQband(t32, 11, t64, 9, t125, 9, t250, 14, t500, 16, t1000, 16, t2000, 15, t4000, 13, t8000, 12, t16000, 11)
         End If 
+    End Sub
+
+    Private Sub btnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStop.Click
+        player.StopPlayback()
     End Sub
 End Class

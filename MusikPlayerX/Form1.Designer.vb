@@ -51,12 +51,6 @@ Partial Class Form1
         Me.Label10 = New System.Windows.Forms.Label
         Me.lblVol = New System.Windows.Forms.Label
         Me.lblRate = New System.Windows.Forms.Label
-        Me.btnRev = New System.Windows.Forms.Button
-        Me.btnLoop = New System.Windows.Forms.Button
-        Me.btnPause = New System.Windows.Forms.Button
-        Me.btnPlay = New System.Windows.Forms.Button
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.btnLoad = New System.Windows.Forms.Button
         Me.lblPitch = New System.Windows.Forms.Label
         Me.lblTpo = New System.Windows.Forms.Label
         Me.t32 = New System.Windows.Forms.TrackBar
@@ -81,11 +75,17 @@ Partial Class Form1
         Me.Label19 = New System.Windows.Forms.Label
         Me.cmbEQ = New System.Windows.Forms.ComboBox
         Me.Label20 = New System.Windows.Forms.Label
+        Me.btnStop = New System.Windows.Forms.Button
+        Me.btnRev = New System.Windows.Forms.Button
+        Me.btnLoop = New System.Windows.Forms.Button
+        Me.btnPause = New System.Windows.Forms.Button
+        Me.btnPlay = New System.Windows.Forms.Button
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.btnLoad = New System.Windows.Forms.Button
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.t32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.t64, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.t250, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +96,7 @@ Partial Class Form1
         CType(Me.t500, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.t16000, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.t8000, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OFDprime
@@ -107,7 +108,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label1.Location = New System.Drawing.Point(396, 53)
+        Me.Label1.Location = New System.Drawing.Point(455, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(69, 16)
         Me.Label1.TabIndex = 2
@@ -115,14 +116,14 @@ Partial Class Form1
         '
         'pbarLeft
         '
-        Me.pbarLeft.Location = New System.Drawing.Point(399, 79)
+        Me.pbarLeft.Location = New System.Drawing.Point(458, 79)
         Me.pbarLeft.Name = "pbarLeft"
         Me.pbarLeft.Size = New System.Drawing.Size(252, 23)
         Me.pbarLeft.TabIndex = 3
         '
         'pbarRight
         '
-        Me.pbarRight.Location = New System.Drawing.Point(399, 108)
+        Me.pbarRight.Location = New System.Drawing.Point(458, 108)
         Me.pbarRight.Name = "pbarRight"
         Me.pbarRight.Size = New System.Drawing.Size(252, 23)
         Me.pbarRight.TabIndex = 4
@@ -130,7 +131,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(380, 89)
+        Me.Label2.Location = New System.Drawing.Point(439, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(13, 13)
         Me.Label2.TabIndex = 5
@@ -139,7 +140,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(380, 118)
+        Me.Label3.Location = New System.Drawing.Point(439, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(15, 13)
         Me.Label3.TabIndex = 6
@@ -206,7 +207,7 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Navy
-        Me.Label5.Location = New System.Drawing.Point(304, 85)
+        Me.Label5.Location = New System.Drawing.Point(354, 85)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 21)
         Me.Label5.TabIndex = 24
@@ -345,68 +346,6 @@ Partial Class Form1
         Me.lblRate.Size = New System.Drawing.Size(36, 19)
         Me.lblRate.TabIndex = 39
         Me.lblRate.Text = "100"
-        '
-        'btnRev
-        '
-        Me.btnRev.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.rangiticonmi9
-        Me.btnRev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnRev.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnRev.Location = New System.Drawing.Point(258, 82)
-        Me.btnRev.Name = "btnRev"
-        Me.btnRev.Size = New System.Drawing.Size(30, 30)
-        Me.btnRev.TabIndex = 40
-        Me.btnRev.UseVisualStyleBackColor = True
-        '
-        'btnLoop
-        '
-        Me.btnLoop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.backup_restore
-        Me.btnLoop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLoop.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnLoop.Location = New System.Drawing.Point(222, 82)
-        Me.btnLoop.Name = "btnLoop"
-        Me.btnLoop.Size = New System.Drawing.Size(30, 30)
-        Me.btnLoop.TabIndex = 36
-        Me.btnLoop.UseVisualStyleBackColor = True
-        '
-        'btnPause
-        '
-        Me.btnPause.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.pause
-        Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPause.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnPause.Location = New System.Drawing.Point(186, 82)
-        Me.btnPause.Name = "btnPause"
-        Me.btnPause.Size = New System.Drawing.Size(30, 30)
-        Me.btnPause.TabIndex = 35
-        Me.btnPause.UseVisualStyleBackColor = True
-        '
-        'btnPlay
-        '
-        Me.btnPlay.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.arrow_right_drop_circle
-        Me.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPlay.Location = New System.Drawing.Point(150, 82)
-        Me.btnPlay.Name = "btnPlay"
-        Me.btnPlay.Size = New System.Drawing.Size(30, 30)
-        Me.btnPlay.TabIndex = 34
-        Me.btnPlay.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 326)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(557, 156)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
-        'btnLoad
-        '
-        Me.btnLoad.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.album
-        Me.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLoad.Location = New System.Drawing.Point(114, 82)
-        Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(30, 30)
-        Me.btnLoad.TabIndex = 1
-        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'lblPitch
         '
@@ -649,11 +588,84 @@ Partial Class Form1
         Me.Label20.TabIndex = 64
         Me.Label20.Text = "EQ Presets"
         '
+        'btnStop
+        '
+        Me.btnStop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources._stop
+        Me.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnStop.Location = New System.Drawing.Point(186, 82)
+        Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(30, 30)
+        Me.btnStop.TabIndex = 65
+        Me.btnStop.UseVisualStyleBackColor = True
+        '
+        'btnRev
+        '
+        Me.btnRev.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.rangiticonmi9
+        Me.btnRev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRev.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnRev.Location = New System.Drawing.Point(294, 82)
+        Me.btnRev.Name = "btnRev"
+        Me.btnRev.Size = New System.Drawing.Size(30, 30)
+        Me.btnRev.TabIndex = 40
+        Me.btnRev.UseVisualStyleBackColor = True
+        '
+        'btnLoop
+        '
+        Me.btnLoop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.backup_restore
+        Me.btnLoop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLoop.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnLoop.Location = New System.Drawing.Point(258, 82)
+        Me.btnLoop.Name = "btnLoop"
+        Me.btnLoop.Size = New System.Drawing.Size(30, 30)
+        Me.btnLoop.TabIndex = 36
+        Me.btnLoop.UseVisualStyleBackColor = True
+        '
+        'btnPause
+        '
+        Me.btnPause.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.pause
+        Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPause.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnPause.Location = New System.Drawing.Point(222, 82)
+        Me.btnPause.Name = "btnPause"
+        Me.btnPause.Size = New System.Drawing.Size(30, 30)
+        Me.btnPause.TabIndex = 35
+        Me.btnPause.UseVisualStyleBackColor = True
+        '
+        'btnPlay
+        '
+        Me.btnPlay.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.arrow_right_drop_circle
+        Me.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPlay.Location = New System.Drawing.Point(150, 82)
+        Me.btnPlay.Name = "btnPlay"
+        Me.btnPlay.Size = New System.Drawing.Size(30, 30)
+        Me.btnPlay.TabIndex = 34
+        Me.btnPlay.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 326)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(557, 156)
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'btnLoad
+        '
+        Me.btnLoad.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.album
+        Me.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLoad.Location = New System.Drawing.Point(114, 82)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(30, 30)
+        Me.btnLoad.TabIndex = 1
+        Me.btnLoad.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.btnStop)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.cmbEQ)
         Me.Controls.Add(Me.Label19)
@@ -714,7 +726,6 @@ Partial Class Form1
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbarTempo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.t32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.t64, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.t250, System.ComponentModel.ISupportInitialize).EndInit()
@@ -725,6 +736,7 @@ Partial Class Form1
         CType(Me.t500, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.t16000, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.t8000, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -787,5 +799,6 @@ Partial Class Form1
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents cmbEQ As System.Windows.Forms.ComboBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents btnStop As System.Windows.Forms.Button
 
 End Class

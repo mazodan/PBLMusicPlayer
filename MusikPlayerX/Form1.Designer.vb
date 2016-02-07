@@ -75,6 +75,9 @@ Partial Class Form1
         Me.Label19 = New System.Windows.Forms.Label
         Me.cmbEQ = New System.Windows.Forms.ComboBox
         Me.Label20 = New System.Windows.Forms.Label
+        Me.lbPlayLst = New System.Windows.Forms.ListBox
+        Me.chkPLS = New System.Windows.Forms.CheckBox
+        Me.btnPLSadd = New System.Windows.Forms.Button
         Me.btnStop = New System.Windows.Forms.Button
         Me.btnRev = New System.Windows.Forms.Button
         Me.btnLoop = New System.Windows.Forms.Button
@@ -82,6 +85,8 @@ Partial Class Form1
         Me.btnPlay = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btnLoad = New System.Windows.Forms.Button
+        Me.btnPLSdel = New System.Windows.Forms.Button
+        Me.OFDpls = New System.Windows.Forms.OpenFileDialog
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -588,6 +593,36 @@ Partial Class Form1
         Me.Label20.TabIndex = 64
         Me.Label20.Text = "EQ Presets"
         '
+        'lbPlayLst
+        '
+        Me.lbPlayLst.Enabled = False
+        Me.lbPlayLst.FormattingEnabled = True
+        Me.lbPlayLst.Location = New System.Drawing.Point(827, 7)
+        Me.lbPlayLst.Name = "lbPlayLst"
+        Me.lbPlayLst.Size = New System.Drawing.Size(185, 225)
+        Me.lbPlayLst.TabIndex = 66
+        '
+        'chkPLS
+        '
+        Me.chkPLS.AutoSize = True
+        Me.chkPLS.Location = New System.Drawing.Point(721, 12)
+        Me.chkPLS.Name = "chkPLS"
+        Me.chkPLS.Size = New System.Drawing.Size(100, 17)
+        Me.chkPLS.TabIndex = 67
+        Me.chkPLS.Text = "Activate Playlist"
+        Me.chkPLS.UseVisualStyleBackColor = True
+        '
+        'btnPLSadd
+        '
+        Me.btnPLSadd.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.playlist_plus
+        Me.btnPLSadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPLSadd.Enabled = False
+        Me.btnPLSadd.Location = New System.Drawing.Point(791, 39)
+        Me.btnPLSadd.Name = "btnPLSadd"
+        Me.btnPLSadd.Size = New System.Drawing.Size(30, 30)
+        Me.btnPLSadd.TabIndex = 68
+        Me.btnPLSadd.UseVisualStyleBackColor = True
+        '
         'btnStop
         '
         Me.btnStop.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources._stop
@@ -660,11 +695,32 @@ Partial Class Form1
         Me.btnLoad.TabIndex = 1
         Me.btnLoad.UseVisualStyleBackColor = True
         '
+        'btnPLSdel
+        '
+        Me.btnPLSdel.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.playlist_remove
+        Me.btnPLSdel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPLSdel.Enabled = False
+        Me.btnPLSdel.Location = New System.Drawing.Point(791, 75)
+        Me.btnPLSdel.Name = "btnPLSdel"
+        Me.btnPLSdel.Size = New System.Drawing.Size(30, 30)
+        Me.btnPLSdel.TabIndex = 69
+        Me.btnPLSdel.UseVisualStyleBackColor = True
+        '
+        'OFDpls
+        '
+        Me.OFDpls.FileName = "OpenFileDialog1"
+        Me.OFDpls.Filter = "MP3 files (*.mp3)|*.mp3"
+        Me.OFDpls.Multiselect = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.btnPLSdel)
+        Me.Controls.Add(Me.btnPLSadd)
+        Me.Controls.Add(Me.chkPLS)
+        Me.Controls.Add(Me.lbPlayLst)
         Me.Controls.Add(Me.btnStop)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.cmbEQ)
@@ -800,5 +856,10 @@ Partial Class Form1
     Friend WithEvents cmbEQ As System.Windows.Forms.ComboBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents btnStop As System.Windows.Forms.Button
+    Friend WithEvents lbPlayLst As System.Windows.Forms.ListBox
+    Friend WithEvents chkPLS As System.Windows.Forms.CheckBox
+    Friend WithEvents btnPLSadd As System.Windows.Forms.Button
+    Friend WithEvents btnPLSdel As System.Windows.Forms.Button
+    Friend WithEvents OFDpls As System.Windows.Forms.OpenFileDialog
 
 End Class

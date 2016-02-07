@@ -336,4 +336,32 @@ Public Class Form1
     Private Sub btnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStop.Click
         player.StopPlayback()
     End Sub
+
+    Private Sub chkPLS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkPLS.CheckedChanged
+        If chkPLS.Checked = True Then
+            btnPLSadd.Enabled = True
+            btnPLSdel.Enabled = True
+            lbPlayLst.Enabled = True
+        Else
+            btnPLSadd.Enabled = False
+            btnPLSdel.Enabled = False
+            lbPlayLst.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnPLSadd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPLSadd.Click
+        If OFDpls.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            playlistTitleINIT = OFDpls.SafeFileNames.ToList
+            playlistLocINIT = OFDpls.FileNames.ToList
+            For i As Integer = 0 To playlistTitleINIT.Count - 1
+                If playlistTitle.IndexOf(playlistTitleINIT.Item(i)) = -1 Then
+                    'insert playlist in listbox
+                    playlistTitle.Add(playlistTitleINIT.Item(i))
+                    playlistLoc.Add(playlistLocINIT(i))
+                    lbPlayLst.Items.Add(playlistTitleINIT.Item(i))
+                End If
+            Next
+        End If
+    End Sub
 End Class

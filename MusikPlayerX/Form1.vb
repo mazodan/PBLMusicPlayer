@@ -342,10 +342,12 @@ Public Class Form1
             btnPLSadd.Enabled = True
             btnPLSdel.Enabled = True
             lbPlayLst.Enabled = True
+            btnLoad.Enabled = False
         Else
             btnPLSadd.Enabled = False
             btnPLSdel.Enabled = False
             lbPlayLst.Enabled = False
+            btnLoad.Enabled = True
         End If
     End Sub
 
@@ -362,6 +364,34 @@ Public Class Form1
                     lbPlayLst.Items.Add(playlistTitleINIT.Item(i))
                 End If
             Next
+        End If
+    End Sub
+
+    Private Sub btnPLSdel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPLSdel.Click
+        Dim index As Integer = playlistTitle.IndexOf(lbPlayLst.SelectedItem.ToString)
+        If index = -1 Then
+            MessageBox.Show("Select a song", "Playlist Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            playlistTitle.RemoveAt(index)
+            playlistLoc.RemoveAt(index)
+            lbPlayLst.Items.RemoveAt(index)
+        End If
+    End Sub
+
+    Private Sub btnLegal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLegal.Click
+        Licenses.ShowDialog()
+    End Sub
+
+
+    
+    Private Sub lbPlayLst_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbPlayLst.DoubleClick
+        Dim index As Integer = playlistTitle.IndexOf(lbPlayLst.SelectedItem.ToString)
+        func.load(player, playlistLoc.Item(index))
+        ShowInfo()
+        Timer1.Start()
+        Timer2.Start()
+        If lblTitle.Text = "" Then
+            lblTitle.Text = playlistTitle.Item(index)
         End If
     End Sub
 End Class

@@ -87,6 +87,8 @@ Partial Class Form1
         Me.btnLoad = New System.Windows.Forms.Button
         Me.btnPLSdel = New System.Windows.Forms.Button
         Me.OFDpls = New System.Windows.Forms.OpenFileDialog
+        Me.btnLegal = New System.Windows.Forms.Button
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -712,11 +714,32 @@ Partial Class Form1
         Me.OFDpls.Filter = "MP3 files (*.mp3)|*.mp3"
         Me.OFDpls.Multiselect = True
         '
+        'btnLegal
+        '
+        Me.btnLegal.Location = New System.Drawing.Point(632, 8)
+        Me.btnLegal.Name = "btnLegal"
+        Me.btnLegal.Size = New System.Drawing.Size(75, 23)
+        Me.btnLegal.TabIndex = 70
+        Me.btnLegal.Text = "Licenses"
+        Me.btnLegal.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(721, 111)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(67, 17)
+        Me.CheckBox1.TabIndex = 71
+        Me.CheckBox1.Text = "Autoplay"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.btnLegal)
         Me.Controls.Add(Me.btnPLSdel)
         Me.Controls.Add(Me.btnPLSadd)
         Me.Controls.Add(Me.chkPLS)
@@ -777,7 +800,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnLoad)
         Me.Name = "Form1"
-        Me.Text = "PBL mp3 player DEBUG ONLY"
+        Me.Text = "MusicPlayerX - Zplay"
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).EndInit()
@@ -861,5 +884,7 @@ Partial Class Form1
     Friend WithEvents btnPLSadd As System.Windows.Forms.Button
     Friend WithEvents btnPLSdel As System.Windows.Forms.Button
     Friend WithEvents OFDpls As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btnLegal As System.Windows.Forms.Button
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 
 End Class

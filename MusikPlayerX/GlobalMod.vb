@@ -4,4 +4,6 @@
 
     Public playlistTitle As New List(Of String)
     Public playlistLoc As New List(Of String)
+
+    Public plsStop As Boolean = False
 End Module

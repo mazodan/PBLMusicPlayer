@@ -16,6 +16,7 @@ Public Class Form1
     Dim tempo As Integer
     Dim pLoop As Boolean = False
     Dim reverse As Boolean = False
+    Dim playlistIndex As Integer = 0
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -62,10 +63,17 @@ Public Class Form1
         Dim status As New TStreamStatus()
         player.GetStatus(status)
 
+        If chkAP.Checked = True Then
+            func.load(player, playlistLoc(playlistIndex))
+            Timer3.Start()
+        End If
+
         If status.fPause = True Then
             player.ResumePlayback()
-        Else
+        ElseIf chkAP.Checked = False Then
             func.load(player, OFDprime.FileName)
+        ElseIf chkAP.Checked = True Then
+            func.load(player, playlistLoc(playlistIndex))
         End If
 
 
@@ -334,7 +342,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStop.Click
-        player.StopPlayback()
+        If chkAP.Checked = True Then
+            chkAP.Checked = False
+        Else
+            player.StopPlayback()
+            Timer3.Stop()
+        End If
     End Sub
 
     Private Sub chkPLS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkPLS.CheckedChanged
@@ -343,11 +356,14 @@ Public Class Form1
             btnPLSdel.Enabled = True
             lbPlayLst.Enabled = True
             btnLoad.Enabled = False
+            chkAP.Enabled = True
         Else
             btnPLSadd.Enabled = False
             btnPLSdel.Enabled = False
             lbPlayLst.Enabled = False
             btnLoad.Enabled = True
+            player.StopPlayback()
+            chkAP.Enabled = False
         End If
     End Sub
 
@@ -392,6 +408,32 @@ Public Class Form1
         Timer2.Start()
         If lblTitle.Text = "" Then
             lblTitle.Text = playlistTitle.Item(index)
+        End If
+    End Sub
+
+    Private Sub chkAP_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkAP.CheckedChanged
+        If chkAP.Checked = True Then
+            If lbPlayLst.Items.Count = 0 Then
+                MessageBox.Show("Load some songs into the playlist", "Playlist Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                chkAP.Checked = False
+            Else
+                func.load(player, playlistLoc(playlistIndex))
+                Timer3.Start()
+            End If
+        ElseIf chkAP.Checked = False Then
+            player.StopPlayback()
+
+
+        End If
+    End Sub
+
+    Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If status.fPause = False And status.fPlay = False Then
+            playlistIndex += 1
+            func.load(player, playlistLoc(playlistIndex))
         End If
     End Sub
 End Class

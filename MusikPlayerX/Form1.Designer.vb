@@ -88,7 +88,7 @@ Partial Class Form1
         Me.btnPLSdel = New System.Windows.Forms.Button
         Me.OFDpls = New System.Windows.Forms.OpenFileDialog
         Me.btnLegal = New System.Windows.Forms.Button
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.chkAP = New System.Windows.Forms.CheckBox
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -723,22 +723,23 @@ Partial Class Form1
         Me.btnLegal.Text = "Licenses"
         Me.btnLegal.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkAP
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(721, 111)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(67, 17)
-        Me.CheckBox1.TabIndex = 71
-        Me.CheckBox1.Text = "Autoplay"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkAP.AutoSize = True
+        Me.chkAP.Enabled = False
+        Me.chkAP.Location = New System.Drawing.Point(721, 111)
+        Me.chkAP.Name = "chkAP"
+        Me.chkAP.Size = New System.Drawing.Size(67, 17)
+        Me.chkAP.TabIndex = 71
+        Me.chkAP.Text = "Autoplay"
+        Me.chkAP.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chkAP)
         Me.Controls.Add(Me.btnLegal)
         Me.Controls.Add(Me.btnPLSdel)
         Me.Controls.Add(Me.btnPLSadd)
@@ -885,6 +886,6 @@ Partial Class Form1
     Friend WithEvents btnPLSdel As System.Windows.Forms.Button
     Friend WithEvents OFDpls As System.Windows.Forms.OpenFileDialog
     Friend WithEvents btnLegal As System.Windows.Forms.Button
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkAP As System.Windows.Forms.CheckBox
 
 End Class

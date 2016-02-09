@@ -4,7 +4,7 @@
 'source itself
 
 'note, only available on x86 (32-bit)  always target to x86
-'let it be
+
 Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
@@ -65,16 +65,19 @@ Public Class Form1
         player.GetStatus(status)
 
         If chkAP.Checked = True Then
+            plsStop = True
             func.load(player, playlistLoc(playlistIndex))
+            Timer1.Start()
+            Timer2.Start()
             Timer3.Start()
         End If
 
         If status.fPause = True Then
             player.ResumePlayback()
-        ElseIf chkAP.Checked = False Then
-            func.load(player, OFDprime.FileName)
-        ElseIf chkAP.Checked = True Then
-            func.load(player, playlistLoc(playlistIndex))
+        Else
+            player.StartPlayback()
+            Timer1.Start()
+            Timer2.Start()
         End If
 
 
@@ -183,7 +186,11 @@ Public Class Form1
 
         If player.LoadID3Ex(info, True) Then
             If info.Title = "" Then
-                lblTitle.Text = Fnameonly
+                If chkPLS.Checked = True Then
+                    lblTitle.Text = playlistTitle(playlistIndex)
+                Else
+                    lblTitle.Text = Fnameonly
+                End If
             Else
                 lblTitle.Text = info.Title
             End If
@@ -418,7 +425,7 @@ Public Class Form1
                 MessageBox.Show("Load some songs into the playlist", "Playlist Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 chkAP.Checked = False
             Else
-                func.load(player, playlistLoc(playlistIndex))
+
                 Timer3.Start()
             End If
         ElseIf chkAP.Checked = False Then
@@ -432,9 +439,10 @@ Public Class Form1
         Dim status As New TStreamStatus()
         player.GetStatus(status)
 
-        If status.fPause = False And status.fPlay = False Then
+        If status.fPause = False And status.fPlay = False And plsStop = True Then
             playlistIndex += 1
             func.load(player, playlistLoc(playlistIndex))
+            ShowInfo()
         End If
     End Sub
 End Class

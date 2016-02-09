@@ -16,6 +16,9 @@ Public Class Form1
     Dim tempo As Integer
     Dim pLoop As Boolean = False
     Dim reverse As Boolean = False
+    Dim playlistIndex As Integer = 0
+
+    Dim AutoPlaylistStopped As Boolean = False
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -65,7 +68,13 @@ Public Class Form1
         If status.fPause = True Then
             player.ResumePlayback()
         Else
-            func.load(player, OFDprime.FileName)
+            If chkAutoPlay.Enabled = True Then
+                func.load(player, playlistLoc(playlistIndex))
+                Timer3.Start()
+                ShowInfo()
+            Else
+                func.load(player, OFDprime.FileName)
+            End If
         End If
 
 
@@ -79,6 +88,7 @@ Public Class Form1
         ShowInfo()
         Timer1.Start()
         Timer2.Start()
+        Marquee.Start()
     End Sub
 
 
@@ -173,11 +183,20 @@ Public Class Form1
         lblTitle.Text = ""
 
         If player.LoadID3Ex(info, True) Then
-            If info.Title = "" Then
-                lblTitle.Text = Fnameonly
-            Else
-                lblTitle.Text = info.Title
+            If chkAutoPlay.Enabled = False Then
+                If info.Title = "" Then
+                    lblTitle.Text = Fnameonly + " - " + info.Artist
+                Else
+                    lblTitle.Text = info.Title + " - " + info.Artist
+                End If
+            ElseIf chkAutoPlay.Enabled = True Then
+                If info.Title = "" Or info.Title = " " Then
+                    lblTitle.Text = playlistTitle(playlistIndex) + " - " + info.Artist
+                Else
+                    lblTitle.Text = info.Title + " - " + info.Artist
+                End If
             End If
+
         End If
     End Sub
 
@@ -342,11 +361,13 @@ Public Class Form1
             btnPLSadd.Enabled = True
             btnPLSdel.Enabled = True
             lbPlayLst.Enabled = True
+            chkAutoPlay.Enabled = True
             btnLoad.Enabled = False
         Else
             btnPLSadd.Enabled = False
             btnPLSdel.Enabled = False
             lbPlayLst.Enabled = False
+            chkAutoPlay.Enabled = False
             btnLoad.Enabled = True
         End If
     End Sub
@@ -392,6 +413,45 @@ Public Class Form1
         Timer2.Start()
         If lblTitle.Text = "" Then
             lblTitle.Text = playlistTitle.Item(index)
+        End If
+        If chkAutoPlay.Enabled = True Then
+            Timer3.Start()
+        End If
+    End Sub
+
+    Private Sub chkAutoPlay_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkAutoPlay.CheckedChanged
+        If chkAutoPlay.Checked = True Then
+            If lbPlayLst.Items.Count = 0 Then
+                MessageBox.Show("Load some songs into the playlist", "Playlist Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                chkAutoPlay.Checked = False
+            Else
+                func.load(player, playlistLoc(playlistIndex))
+                Timer1.Start()
+                Timer2.Start()
+                ShowInfo()
+                Timer3.Start()
+            End If
+        End If
+    End Sub
+
+    'this timer checks if playlist is not paused and not playing and stop button is not pressed
+    Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If status.fPlay = False And status.fPause = False And AutoPlaylistStopped = False Then
+            playlistIndex += 1
+            func.load(player, playlistLoc(playlistIndex))
+            ShowInfo()
+            lbPlayLst.SelectedIndex() = playlistIndex
+        End If
+    End Sub
+
+    Private Sub Marquee_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Marquee.Tick
+        Timer1.Interval = 50
+        lblTitle.Left = lblTitle.Left - 10
+        If lblTitle.Left < 0 - lblTitle.Width Then
+            lblTitle.Left = Me.Width
         End If
     End Sub
 End Class

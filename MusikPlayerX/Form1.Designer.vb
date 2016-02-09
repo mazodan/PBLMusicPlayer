@@ -88,7 +88,8 @@ Partial Class Form1
         Me.btnPLSdel = New System.Windows.Forms.Button
         Me.OFDpls = New System.Windows.Forms.OpenFileDialog
         Me.btnLegal = New System.Windows.Forms.Button
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.chkAutoPlay = New System.Windows.Forms.CheckBox
+        Me.Marquee = New System.Windows.Forms.Timer(Me.components)
         CType(Me.tbVol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbPitch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,18 +139,20 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(439, 89)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(13, 13)
+        Me.Label2.Size = New System.Drawing.Size(12, 13)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "L"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(439, 118)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(15, 13)
+        Me.Label3.Size = New System.Drawing.Size(14, 13)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "R"
         '
@@ -159,6 +162,7 @@ Partial Class Form1
         '
         'btnBPM
         '
+        Me.btnBPM.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBPM.Location = New System.Drawing.Point(12, 133)
         Me.btnBPM.Name = "btnBPM"
         Me.btnBPM.Size = New System.Drawing.Size(75, 23)
@@ -202,9 +206,10 @@ Partial Class Form1
         'chkEQ
         '
         Me.chkEQ.AutoSize = True
+        Me.chkEQ.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkEQ.Location = New System.Drawing.Point(666, 278)
         Me.chkEQ.Name = "chkEQ"
-        Me.chkEQ.Size = New System.Drawing.Size(41, 17)
+        Me.chkEQ.Size = New System.Drawing.Size(40, 17)
         Me.chkEQ.TabIndex = 21
         Me.chkEQ.Text = "EQ"
         Me.chkEQ.UseVisualStyleBackColor = True
@@ -232,9 +237,10 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(17, 173)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.Size = New System.Drawing.Size(45, 13)
         Me.Label6.TabIndex = 26
         Me.Label6.Text = "Volume"
         '
@@ -251,9 +257,10 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(17, 249)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 13)
+        Me.Label7.Size = New System.Drawing.Size(73, 13)
         Me.Label7.TabIndex = 28
         Me.Label7.Text = "Audio Speed"
         '
@@ -271,9 +278,10 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(329, 173)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(31, 13)
+        Me.Label8.Size = New System.Drawing.Size(32, 13)
         Me.Label8.TabIndex = 30
         Me.Label8.Text = "Pitch"
         '
@@ -291,6 +299,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(329, 249)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
@@ -326,6 +335,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(93, 138)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(33, 13)
@@ -579,6 +589,7 @@ Partial Class Form1
         '
         'cmbEQ
         '
+        Me.cmbEQ.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEQ.FormattingEnabled = True
         Me.cmbEQ.Items.AddRange(New Object() {"Flat", "Acoustics", "Bass Booster", "Bass Reducer", "Classical", "Dance", "Deep", "Electronic", "Hip-Hop", "Jazz", "Latin", "Loudness", "Lounge", "Piano", "R&B", "Rock", "Small Speakers", "Spoken Word", "Treble Booster", "Treble Reducer", "Vocal Booster"})
         Me.cmbEQ.Location = New System.Drawing.Point(796, 276)
@@ -589,6 +600,7 @@ Partial Class Form1
         'Label20
         '
         Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.Location = New System.Drawing.Point(728, 279)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(60, 13)
@@ -598,8 +610,9 @@ Partial Class Form1
         'lbPlayLst
         '
         Me.lbPlayLst.Enabled = False
+        Me.lbPlayLst.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbPlayLst.FormattingEnabled = True
-        Me.lbPlayLst.Location = New System.Drawing.Point(827, 7)
+        Me.lbPlayLst.Location = New System.Drawing.Point(827, 45)
         Me.lbPlayLst.Name = "lbPlayLst"
         Me.lbPlayLst.Size = New System.Drawing.Size(185, 225)
         Me.lbPlayLst.TabIndex = 66
@@ -607,9 +620,10 @@ Partial Class Form1
         'chkPLS
         '
         Me.chkPLS.AutoSize = True
-        Me.chkPLS.Location = New System.Drawing.Point(721, 12)
+        Me.chkPLS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPLS.Location = New System.Drawing.Point(721, 50)
         Me.chkPLS.Name = "chkPLS"
-        Me.chkPLS.Size = New System.Drawing.Size(100, 17)
+        Me.chkPLS.Size = New System.Drawing.Size(104, 17)
         Me.chkPLS.TabIndex = 67
         Me.chkPLS.Text = "Activate Playlist"
         Me.chkPLS.UseVisualStyleBackColor = True
@@ -619,7 +633,7 @@ Partial Class Form1
         Me.btnPLSadd.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.playlist_plus
         Me.btnPLSadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPLSadd.Enabled = False
-        Me.btnPLSadd.Location = New System.Drawing.Point(791, 39)
+        Me.btnPLSadd.Location = New System.Drawing.Point(791, 77)
         Me.btnPLSadd.Name = "btnPLSadd"
         Me.btnPLSadd.Size = New System.Drawing.Size(30, 30)
         Me.btnPLSadd.TabIndex = 68
@@ -702,7 +716,7 @@ Partial Class Form1
         Me.btnPLSdel.BackgroundImage = Global.MusikPlayerX.My.Resources.Resources.playlist_remove
         Me.btnPLSdel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPLSdel.Enabled = False
-        Me.btnPLSdel.Location = New System.Drawing.Point(791, 75)
+        Me.btnPLSdel.Location = New System.Drawing.Point(791, 113)
         Me.btnPLSdel.Name = "btnPLSdel"
         Me.btnPLSdel.Size = New System.Drawing.Size(30, 30)
         Me.btnPLSdel.TabIndex = 69
@@ -716,29 +730,34 @@ Partial Class Form1
         '
         'btnLegal
         '
-        Me.btnLegal.Location = New System.Drawing.Point(632, 8)
+        Me.btnLegal.Location = New System.Drawing.Point(635, 46)
         Me.btnLegal.Name = "btnLegal"
         Me.btnLegal.Size = New System.Drawing.Size(75, 23)
         Me.btnLegal.TabIndex = 70
         Me.btnLegal.Text = "Licenses"
         Me.btnLegal.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkAutoPlay
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(721, 111)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(67, 17)
-        Me.CheckBox1.TabIndex = 71
-        Me.CheckBox1.Text = "Autoplay"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkAutoPlay.AutoSize = True
+        Me.chkAutoPlay.Enabled = False
+        Me.chkAutoPlay.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkAutoPlay.Location = New System.Drawing.Point(721, 149)
+        Me.chkAutoPlay.Name = "chkAutoPlay"
+        Me.chkAutoPlay.Size = New System.Drawing.Size(72, 17)
+        Me.chkAutoPlay.TabIndex = 71
+        Me.chkAutoPlay.Text = "Autoplay"
+        Me.chkAutoPlay.UseVisualStyleBackColor = True
+        '
+        'Marquee
+        '
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 494)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chkAutoPlay)
         Me.Controls.Add(Me.btnLegal)
         Me.Controls.Add(Me.btnPLSdel)
         Me.Controls.Add(Me.btnPLSadd)
@@ -885,6 +904,7 @@ Partial Class Form1
     Friend WithEvents btnPLSdel As System.Windows.Forms.Button
     Friend WithEvents OFDpls As System.Windows.Forms.OpenFileDialog
     Friend WithEvents btnLegal As System.Windows.Forms.Button
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkAutoPlay As System.Windows.Forms.CheckBox
+    Friend WithEvents Marquee As System.Windows.Forms.Timer
 
 End Class

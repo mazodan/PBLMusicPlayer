@@ -69,6 +69,7 @@ Public Class Form1
             player.ResumePlayback()
         Else
             If chkAutoPlay.Enabled = True Then
+                AutoPlaylistStopped = False
                 func.load(player, playlistLoc(playlistIndex))
                 Timer3.Start()
                 ShowInfo()
@@ -88,7 +89,6 @@ Public Class Form1
         ShowInfo()
         Timer1.Start()
         Timer2.Start()
-        Marquee.Start()
     End Sub
 
 
@@ -179,21 +179,33 @@ Public Class Form1
     End Sub
 
     Public Sub ShowInfo()
+        Dim StreamInfo As New TStreamInfo() 'Get stream info
+        player.GetStreamInfo(StreamInfo)
+
         Dim info As New TID3InfoEx()
         lblTitle.Text = ""
 
         If player.LoadID3Ex(info, True) Then
             If chkAutoPlay.Enabled = False Then
                 If info.Title = "" Then
-                    lblTitle.Text = Fnameonly + " - " + info.Artist
+                    lblTitle.Text = Fnameonly + " - " + info.Artist + " - " + info.Year _
+                    + " " + Convert.ToString(StreamInfo.Length.hms.minute) _
+                    + ":" + Convert.ToString(StreamInfo.Length.hms.second)
+
                 Else
-                    lblTitle.Text = info.Title + " - " + info.Artist
+                    lblTitle.Text = info.Title + " - " + info.Artist + " - " + info.Year _
+                    + " " + Convert.ToString(StreamInfo.Length.hms.minute) _
+                    + ":" + Convert.ToString(StreamInfo.Length.hms.second)
                 End If
             ElseIf chkAutoPlay.Enabled = True Then
                 If info.Title = "" Or info.Title = " " Then
-                    lblTitle.Text = playlistTitle(playlistIndex) + " - " + info.Artist
+                    lblTitle.Text = playlistTitle(playlistIndex) + " - " + info.Artist + " - " + info.Year _
+                    + " " + ":" + Convert.ToString(StreamInfo.Length.hms.minute) _
+                    + ":" + Convert.ToString(StreamInfo.Length.hms.second)
                 Else
-                    lblTitle.Text = info.Title + " - " + info.Artist
+                    lblTitle.Text = info.Title + " - " + info.Artist + " - " + info.Year _
+                    + " " + ":" + Convert.ToString(StreamInfo.Length.hms.minute) _
+                    + ":" + Convert.ToString(StreamInfo.Length.hms.second)
                 End If
             End If
 
@@ -353,7 +365,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStop.Click
-        player.StopPlayback()
+        If chkAutoPlay.Enabled = True Then
+            AutoPlaylistStopped = True
+            player.StopPlayback()
+        ElseIf chkAutoPlay.Enabled = False Then
+            player.StopPlayback()
+        End If
     End Sub
 
     Private Sub chkPLS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkPLS.CheckedChanged
@@ -415,6 +432,8 @@ Public Class Form1
             lblTitle.Text = playlistTitle.Item(index)
         End If
         If chkAutoPlay.Enabled = True Then
+            AutoPlaylistStopped = False
+            playlistIndex = lbPlayLst.SelectedIndex()
             Timer3.Start()
         End If
     End Sub
@@ -431,6 +450,8 @@ Public Class Form1
                 ShowInfo()
                 Timer3.Start()
             End If
+        Else
+            Timer3.Stop()
         End If
     End Sub
 
@@ -439,7 +460,8 @@ Public Class Form1
         Dim status As New TStreamStatus()
         player.GetStatus(status)
 
-        If status.fPlay = False And status.fPause = False And AutoPlaylistStopped = False Then
+        If status.fPlay = False And status.fPause = False And AutoPlaylistStopped = False _
+        And playlistIndex < playlistTitle.Count Then
             playlistIndex += 1
             func.load(player, playlistLoc(playlistIndex))
             ShowInfo()
@@ -447,11 +469,5 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Marquee_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Marquee.Tick
-        Timer1.Interval = 50
-        lblTitle.Left = lblTitle.Left - 10
-        If lblTitle.Left < 0 - lblTitle.Width Then
-            lblTitle.Left = Me.Width
-        End If
-    End Sub
+    
 End Class

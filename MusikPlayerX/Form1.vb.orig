@@ -4,6 +4,7 @@
 'source itself
 
 'note, only available on x86 (32-bit)  always target to x86
+
 Imports MusikPlayerX.libZPlay
 Public Class Form1
     Dim player As New ZPlay
@@ -16,6 +17,7 @@ Public Class Form1
     Dim tempo As Integer
     Dim pLoop As Boolean = False
     Dim reverse As Boolean = False
+    Dim playlistIndex As Integer = 0
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -62,10 +64,20 @@ Public Class Form1
         Dim status As New TStreamStatus()
         player.GetStatus(status)
 
+        If chkAP.Checked = True Then
+            plsStop = True
+            func.load(player, playlistLoc(playlistIndex))
+            Timer1.Start()
+            Timer2.Start()
+            Timer3.Start()
+        End If
+
         If status.fPause = True Then
             player.ResumePlayback()
         Else
-            func.load(player, OFDprime.FileName)
+            player.StartPlayback()
+            Timer1.Start()
+            Timer2.Start()
         End If
 
 
@@ -174,7 +186,11 @@ Public Class Form1
 
         If player.LoadID3Ex(info, True) Then
             If info.Title = "" Then
-                lblTitle.Text = Fnameonly
+                If chkPLS.Checked = True Then
+                    lblTitle.Text = playlistTitle(playlistIndex)
+                Else
+                    lblTitle.Text = Fnameonly
+                End If
             Else
                 lblTitle.Text = info.Title
             End If
@@ -334,7 +350,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStop.Click
-        player.StopPlayback()
+        If chkAP.Checked = True Then
+            chkAP.Checked = False
+        Else
+            player.StopPlayback()
+            Timer3.Stop()
+        End If
     End Sub
 
     Private Sub chkPLS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkPLS.CheckedChanged
@@ -342,12 +363,21 @@ Public Class Form1
             btnPLSadd.Enabled = True
             btnPLSdel.Enabled = True
             lbPlayLst.Enabled = True
+<<<<<<< HEAD
             btnLoad.Enabled = False
+            chkAP.Enabled = True
+=======
+>>>>>>> parent of e87a3ed... playlist phase 2 complete, now for the autoplay and it's open for beta release
         Else
             btnPLSadd.Enabled = False
             btnPLSdel.Enabled = False
             lbPlayLst.Enabled = False
+<<<<<<< HEAD
             btnLoad.Enabled = True
+            player.StopPlayback()
+            chkAP.Enabled = False
+=======
+>>>>>>> parent of e87a3ed... playlist phase 2 complete, now for the autoplay and it's open for beta release
         End If
     End Sub
 
@@ -366,6 +396,7 @@ Public Class Form1
             Next
         End If
     End Sub
+<<<<<<< HEAD
 
     Private Sub btnPLSdel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPLSdel.Click
         Dim index As Integer = playlistTitle.IndexOf(lbPlayLst.SelectedItem.ToString)
@@ -394,4 +425,33 @@ Public Class Form1
             lblTitle.Text = playlistTitle.Item(index)
         End If
     End Sub
+
+    Private Sub chkAP_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkAP.CheckedChanged
+        If chkAP.Checked = True Then
+            If lbPlayLst.Items.Count = 0 Then
+                MessageBox.Show("Load some songs into the playlist", "Playlist Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                chkAP.Checked = False
+            Else
+
+                Timer3.Start()
+            End If
+        ElseIf chkAP.Checked = False Then
+            player.StopPlayback()
+
+
+        End If
+    End Sub
+
+    Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
+        Dim status As New TStreamStatus()
+        player.GetStatus(status)
+
+        If status.fPause = False And status.fPlay = False And plsStop = True Then
+            playlistIndex += 1
+            func.load(player, playlistLoc(playlistIndex))
+            ShowInfo()
+        End If
+    End Sub
+=======
+>>>>>>> parent of e87a3ed... playlist phase 2 complete, now for the autoplay and it's open for beta release
 End Class
